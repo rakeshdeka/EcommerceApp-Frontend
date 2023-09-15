@@ -1,8 +1,9 @@
+import ProductCard from "./ProductCard";
 function Body() {
     return (
         <>
-            <div>
-                Body
+            <div  >
+                <ProductCard />
             </div>
         </>
     )
