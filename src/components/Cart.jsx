@@ -1,6 +1,8 @@
+// import ProductOverview from './ProductOverview'
 function Cart() {
     return (
         <>
+            {/* <ProductOverview /> */}
             <div className="border-solid border-2 border-gray-300 w-1/2 flex flex-col justify-center mx-auto my-auto gap-1 rounded-lg mt-1 mb-1">
                 <div>
                     <h1 className="font-extrabold text-xl text-center">Your Cart</h1>
