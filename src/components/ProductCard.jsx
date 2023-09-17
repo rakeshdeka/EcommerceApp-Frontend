@@ -1,6 +1,15 @@
-
+import { useState } from "react";
 import { products } from "../constants";
+import Cart from "./Cart"
+
 function ProductCard() {
+    const [item, setItem] = useState([])
+    const addToCart = (product) => {
+        // console.log(product);
+        setItem([...item, product])
+        // console.log(item);
+    }
+
 
     return (
         <>
@@ -35,18 +44,20 @@ function ProductCard() {
                                 <button
                                     type="button"
                                     className="mt-4 w-full rounded-sm bg-black px-2 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-                                    onClick={() => {
-                                        console.log("add to cart");
-                                    }}
+                                    onClick={() => addToCart(product)}
                                 >
                                     Add to Cart
                                 </button>
+
                             </div>
                         </div>
                     ))}
                 </div>
 
             </div>
+
+            <Cart item={item} />
+
         </>
     )
 }
