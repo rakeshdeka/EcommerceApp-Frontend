@@ -38,7 +38,7 @@ function Cart(props) {
 
 
             </div>
-            {/* {props?.item?.name} */}
+            {props?.item?.name}
 
 
         </>
