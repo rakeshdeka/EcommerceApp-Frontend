@@ -1,12 +1,12 @@
-import ProductOverview from './ProductOverview'
+// import ProductOverview from './ProductOverview'
 function Cart(props) {
-    // console.log(props.item[0]);
+    console.log(props.item[0]);
 
     return (
         <>
-            <ProductOverview />
+            {/* <ProductOverview /> */}
 
-            {/* 
+
             <div className="border-solid border border-gray-300 w-1/2 flex flex-col justify-center mx-auto my-auto rounded-lg mt-1 mb-1">
                 <div>
                     <h1 className="font-extrabold text-xl text-center">Your Cart</h1>
@@ -39,7 +39,7 @@ function Cart(props) {
 
 
             </div>
-            {props?.item?.name} */}
+            {props?.item?.name}
 
 
         </>

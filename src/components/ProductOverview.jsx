@@ -52,4 +52,4 @@ function ProductOverview() {
         </>
     )
 }
-export default ProductOverview
+export default ProductOverview;

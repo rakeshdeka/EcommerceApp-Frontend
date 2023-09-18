@@ -56,7 +56,7 @@ function ProductCard() {
 
             </div>
 
-            {/* <Cart item={item} /> */}
+            <Cart item={item} />
 
         </>
     )
