@@ -13,7 +13,7 @@ function App() {
   return (
     <>
 
-      {/* <ProductCard /> */}
+
       <Header />
       <Outlet />
       <Footer />

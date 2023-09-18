@@ -6,7 +6,7 @@ function Cart(props) {
         <>
 
 
-            <div className="border-solid border-2 border-gray-300 w-1/2 flex flex-col justify-center mx-auto my-auto gap-1 rounded-lg mt-1 mb-1">
+            <div className="border-solid border border-gray-300 w-1/2 flex flex-col justify-center mx-auto my-auto rounded-lg mt-1 mb-1">
                 <div>
                     <h1 className="font-extrabold text-xl text-center">Your Cart</h1>
                     <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum eius repellat ipsam, sit praesentium incidunt.</p>
@@ -14,13 +14,13 @@ function Cart(props) {
 
                 <div>
                     {props.item.map((item, index) => (
-                        <div key={index} className="flex flex-col gap-1 border-t border-gray-300">
-                            <div className='w-1/2 h-1/2 ml-1 mt-4  '>
-                                <img className="bg-slate-300" src={item?.imageSrc} alt="" />
+                        <div key={index} className="flex gap-1 border border-gray-300 ">
+                            <div className='w-1/4 border-solid border-r border-gray-300 flex justify-center items-center'>
+                                <img className="bg-slate-300 w-16 h-16 " src={item?.imageSrc} alt="" />
                             </div>
-                            <div className="flex justify-between">
+                            <div className=" w-3/4 flex place-items-end">
                                 <h2 className="ml-1 mb-1 font-bold">{item?.name}</h2>
-                                <h2 className=" mr-1 mb-1 font-bold">{item?.price}</h2>
+                                <h2 className="ml-auto mr-1 mb-1 font-bold">{item?.price}</h2>
                             </div>
                         </div>
                     ))}
