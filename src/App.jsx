@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
-import Header from './components/Header'
-import Body from './components/Body'
-import Footer from './components/Footer'
-import AboutUs from './components/AboutUs'
-import Cart from './components/Cart'
-import { Error } from './components/Error';
-import ProductCard from './components/ProductCard';
+// import Header from './components/Header/Header'
+import Header from './components/Header/Header'
+import Body from './pages/Body/Body'
+import Footer from './components/Footer/Footer'
+import AboutUs from './pages/AboutUs/AboutUs'
+import Cart from './pages/Cart/Cart'
+// import { Error } from './pages/Error';
+import { Error } from './pages/Error/Error'
+
 import './App.css'
 import { createBrowserRouter, Outlet } from 'react-router-dom'
 import { CartProvider } from './utils/Contexts/CartContext';
-import ProductOverview from './components/ProductOverview';
+import ProductOverview from './components/ProductOverview/ProductOverview';
 
 
 function App() {

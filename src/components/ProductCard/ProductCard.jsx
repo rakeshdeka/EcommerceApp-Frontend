@@ -1,7 +1,7 @@
 
-import { products } from "../constants";
+import { products } from "../../constants";
 
-import { useCart } from "../utils/Contexts/CartContext";
+import { useCart } from "../../utils/Contexts/CartContext";
 
 
 function ProductCard() {

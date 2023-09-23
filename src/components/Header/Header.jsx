@@ -1,5 +1,6 @@
-import hannahLogo from '../assets/dummy-png.png';
-import shoppingCart from '../assets/shopping_cart.svg'
+
+import hannahLogo from '../../assets/dummy-png.png';
+import shoppingCart from '../../assets/shopping_cart.svg';
 import { Link } from 'react-router-dom';
 const Logo = () => (
     <Link to='/'>
