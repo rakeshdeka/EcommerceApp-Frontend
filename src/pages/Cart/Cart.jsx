@@ -1,16 +1,12 @@
-// import ProductOverview from './ProductOverview'
+
 import { useCart } from "../../utils/Contexts/CartContext";
+import { Link } from "react-router-dom";
 function Cart(props) {
-    // console.log(props.item[0]);
+
     const { item } = useCart();
-    // console.log(props)
-    // const { item } = props;
-    // console.log(item);
+
     return (
         <>
-            {/* <ProductOverview /> */}
-
-
             <div className="border-solid border border-gray-300 w-1/2 flex flex-col justify-center mx-auto my-auto rounded-lg mt-1 mb-1">
                 <div>
                     <h1 className="font-extrabold text-xl text-center">Your Cart</h1>
@@ -24,8 +20,13 @@ function Cart(props) {
                                 <img className="bg-slate-300 w-16 h-16 " src={item?.imageSrc} alt="" />
                             </div>
                             <div className=" w-3/4 flex place-items-end">
-                                <h2 className="ml-1 mb-1 font-bold">{item?.name}</h2>
-                                <h2 className="ml-auto mr-1 mb-1 font-bold">{item?.price}</h2>
+                                <div className="ml-1 mb-1 font-bold">{item?.name}</div>
+                                <div className="border-solid border border-gray-300 mt-1 ml-1 font-medium flex w-48 justify-center rounded-md">
+                                    <div className="border-solid border-r border-gray-300 p-1 w-10 text-center cursor-pointer" >+</div>
+                                    <div className="border-solid border-r border-gray-300 p-1 w-10 text-center cursor-pointer" >1</div>
+                                    <div className="border-solid p-1 w-10 text-center cursor-pointer">-</div>
+                                </div>
+                                <div className="ml-auto mr-1 mb-1 font-bold">{item?.price}</div>
                             </div>
                         </div>
                     ))}
@@ -37,7 +38,7 @@ function Cart(props) {
                 </div>
 
                 <div className="flex justify-end gap-4">
-                    <button className="border-solid border border-black p-1 rounded-md mb-1">Back to shop</button>
+                    <Link to='/'> <button className="border-solid border border-black p-1 rounded-md mb-1">Back to shop</button></Link>
                     <button className="border-solid border border-black  p-1 mr-1 rounded-md mb-1">Checkout</button>
                 </div>
 

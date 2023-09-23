@@ -1,20 +1,32 @@
 import { useParams } from "react-router-dom";
 import { products } from "../../constants";
+import { useCart } from "../../utils/Contexts/CartContext";
+import { NotFound } from "./NotFound";
+import { useState } from "react";
 function ProductOverview() {
+    const { addToCart } = useCart();
     const params = useParams();
     const { id } = params;
     console.log(params);
     const product = products.find((product) => product.id === parseInt(id));
+    const [count, setCount] = useState(0)
+
+    const increment = () => {
+        setCount(count + 1)
+    }
+    const decrement = () => {
+        setCount(count - 1)
+    }
 
     if (!product) {
         // Handle the case where the product is not found
-        return <div>Product not found</div>;
+        return <NotFound />;
     }
 
     return (
         <>
             <div className="flex justify-center">
-                <div className="  w-1/2 flex justify-center ">
+                <div className=" h-[300px]  w-1/2 flex justify-center ">
                     <img className="w-68 rounded-lg" src={product?.imageSrc} alt="" />
                 </div>
                 <div className="  w-1/2">
@@ -36,11 +48,13 @@ function ProductOverview() {
                     </div>
                     <div className="border-solid border-t border-gray-300 flex justify-between h-12">
                         <div className="border-solid border border-gray-300 mt-1 ml-1 font-medium flex w-48 justify-center rounded-md">
-                            <div className="border-solid border-r border-gray-300 p-1 w-10 text-center cursor-pointer">+</div>
-                            <div className="border-solid border-r border-gray-300 p-1 w-10 text-center cursor-pointer">1</div>
-                            <div className="border-solid p-1 w-10 text-center cursor-pointer">-</div>
+                            <div className="border-solid border-r border-gray-300 p-1 w-10 text-center cursor-pointer" onClick={increment}>+</div>
+                            <div className="border-solid border-r border-gray-300 p-1 w-10 text-center cursor-pointer" >{count}</div>
+                            <div className="border-solid p-1 w-10 text-center cursor-pointer" onClick={decrement}>-</div>
                         </div>
-                        <div className=" bg-black text-white mt-1 mb-1 mr-1 font-medium rounded-md p-1 w-48 text-center cursor-pointer">Add to cart</div>
+                        <div className=" bg-black text-white mt-1 mb-1 mr-1 font-medium rounded-md p-1 w-48 text-center cursor-pointer
+                        
+                        " onClick={() => addToCart(product)}>Add to cart</div>
                     </div>
                     <div className="border-solid border-t border-gray-300 mt-1 mb-1 font-medium">SKU: N/A
 
