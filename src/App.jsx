@@ -9,6 +9,7 @@ import ProductCard from './components/ProductCard';
 import './App.css'
 import { createBrowserRouter, Outlet } from 'react-router-dom'
 import { CartProvider } from './utils/Contexts/CartContext';
+import ProductOverview from './components/ProductOverview';
 
 
 function App() {
@@ -45,6 +46,10 @@ export const appRouter = createBrowserRouter([
         path: "/cart",
         element: <Cart />,
       },
+      {
+        path: "/overview/:id",
+        element: <ProductOverview />,
+      }
 
     ],
   },

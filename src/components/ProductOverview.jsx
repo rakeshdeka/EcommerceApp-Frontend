@@ -1,24 +1,36 @@
+import { useParams } from "react-router-dom";
+import { products } from "../constants";
 function ProductOverview() {
+    const params = useParams();
+    const { id } = params;
+    console.log(params);
+    const product = products.find((product) => product.id === parseInt(id));
+
+    if (!product) {
+        // Handle the case where the product is not found
+        return <div>Product not found</div>;
+    }
 
     return (
         <>
             <div className="flex justify-center">
                 <div className="  w-1/2 flex justify-center ">
-                    <img className="w-68 rounded-lg" src="https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/21470290/2023/1/9/ef2cc4b3-5ec5-4e3d-93d6-85a70475f97c1673260187429RelaxedFitHoodie1.jpg" alt="" />
+                    <img className="w-68 rounded-lg" src={product?.imageSrc} alt="" />
                 </div>
                 <div className="  w-1/2">
-                    <h1 className="mb-1 font-extrabold text-xl">Nike Air Max 95 By You</h1>
-                    <p className=" mb-1">The Nike Air Max 95 By You lets you take inspiration from the human body itself. The midsole represents the spine, graduated panels are the muscles, the lace loops are the shoe's ribs and the mesh in the upper is the skin.</p>
+
+                    <h1 className="mb-1 font-extrabold text-xl"> {product?.name}</h1>
+                    <p className=" mb-1"> {product?.description}</p>
                     <div className="flex gap-2">
-                        <p className="mb-1 ml-1 font-bold">$40.00</p>
-                        <p className=" mb-1 line-through font-bold text-zinc-400">$50.00</p>
+                        <p className="mb-1 ml-1 font-bold">{product?.price}</p>
+                        <p className=" mb-1 line-through font-bold text-zinc-400">{product?.orginalPrice}</p>
                     </div>
                     <div className="border-solid border-t border-gray-300 h-16">
                         <h1 className="mt-1 ml-1 font-bold">Size: </h1>
                         <div className="flex gap-2">
-                            <p className="border-solid font-medium border border-gray-300 mb-1 ml-1 cursor-pointer p-1">S</p>
-                            <p className="border-solid font-medium border border-gray-300 mb-1 cursor-pointer p-1">M</p>
-                            <p className="border-solid font-medium border border-gray-300 mb-1 cursor-pointer p-1">XL</p>
+                            <p className="border-solid font-medium border border-gray-300 mb-1 ml-1 cursor-pointer p-1">{product?.allSize?.size1}</p>
+                            <p className="border-solid font-medium border border-gray-300 mb-1 cursor-pointer p-1">{product?.allSize?.size2}</p>
+                            <p className="border-solid font-medium border border-gray-300 mb-1 cursor-pointer p-1">{product?.allSize?.size3}</p>
                         </div>
 
                     </div>
