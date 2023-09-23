@@ -1,7 +1,11 @@
 // import ProductOverview from './ProductOverview'
+import { useCart } from "../utils/Contexts/CartContext";
 function Cart(props) {
-    console.log(props.item[0]);
-
+    // console.log(props.item[0]);
+    const { item } = useCart();
+    // console.log(props)
+    // const { item } = props;
+    // console.log(item);
     return (
         <>
             {/* <ProductOverview /> */}
@@ -14,7 +18,7 @@ function Cart(props) {
                 </div>
 
                 <div>
-                    {props.item.map((item, index) => (
+                    {item.map((item, index) => (
                         <div key={index} className="flex gap-1 border border-gray-300 ">
                             <div className='w-1/4 border-solid border-r border-gray-300 flex justify-center items-center'>
                                 <img className="bg-slate-300 w-16 h-16 " src={item?.imageSrc} alt="" />
@@ -39,7 +43,7 @@ function Cart(props) {
 
 
             </div>
-            {props?.item?.name}
+
 
 
         </>

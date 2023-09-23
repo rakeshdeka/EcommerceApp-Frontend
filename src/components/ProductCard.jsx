@@ -1,16 +1,11 @@
-import { useState } from "react";
+
 import { products } from "../constants";
-import Cart from "./Cart"
+
+import { useCart } from "../utils/Contexts/CartContext";
+
 
 function ProductCard() {
-    const [item, setItem] = useState([])
-    const addToCart = (product) => {
-        // console.log(product);
-        setItem([...item, product])
-        // console.log(item);
-    }
-
-
+    const { addToCart } = useCart();
     return (
         <>
             <div className="flex flex-wrap justify-center " >
@@ -56,7 +51,7 @@ function ProductCard() {
 
             </div>
 
-            <Cart item={item} />
+            {/* <Cart item={item} /> */}
 
         </>
     )
