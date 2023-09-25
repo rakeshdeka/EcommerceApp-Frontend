@@ -12,6 +12,8 @@ import './App.css'
 import { createBrowserRouter, Outlet } from 'react-router-dom'
 import { CartProvider } from './utils/Contexts/CartContext';
 import ProductOverview from './components/ProductOverview/ProductOverview';
+import SellerDashboard from './components/DashBoard/SellerDashboard/SellerDashboard';
+import AdminDashboard from './components/DashBoard/AdminDashboard/AdminDashboard';
 
 
 function App() {
@@ -55,6 +57,16 @@ export const appRouter = createBrowserRouter([
 
     ],
   },
+  {
+    path: "/seller",
+    element: <SellerDashboard />,
+    errorElement: <Error />,
+  },
+  {
+    path: "/admin",
+    element: <AdminDashboard />,
+    errorElement: <Error />,
+  }
 ]);
 
 export default App
