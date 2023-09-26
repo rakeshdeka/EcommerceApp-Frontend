@@ -1,7 +1,8 @@
 
 import { useCart } from "../../utils/Contexts/CartContext";
 import { Link } from "react-router-dom";
-function Cart(props) {
+import remove from '../../assets/square_remove.svg';
+function Cart() {
 
     const { item } = useCart();
 
@@ -19,7 +20,7 @@ function Cart(props) {
                             <div className='w-1/4 border-solid border-r border-gray-300 flex justify-center items-center'>
                                 <img className="bg-slate-300 w-16 h-16 " src={item?.imageSrc} alt="" />
                             </div>
-                            <div className=" w-3/4 flex place-items-end">
+                            <div className=" w-3/4 flex place-items-end space-x-3 justify-center items-center">
                                 <div className="ml-1 mb-1 font-bold">{item?.name}</div>
                                 <div className="border-solid border border-gray-300 mt-1 ml-1 font-medium flex w-48 justify-center rounded-md">
                                     <div className="border-solid border-r border-gray-300 p-1 w-10 text-center cursor-pointer" >+</div>
@@ -27,6 +28,7 @@ function Cart(props) {
                                     <div className="border-solid p-1 w-10 text-center cursor-pointer">-</div>
                                 </div>
                                 <div className="ml-auto mr-1 mb-1 font-bold">{item?.price}</div>
+                                <img className="cursor-pointe" src={remove} alt="remove_icon" />
                             </div>
                         </div>
                     ))}
@@ -39,7 +41,10 @@ function Cart(props) {
 
                 <div className="flex justify-end gap-4">
                     <Link to='/'> <button className="border-solid border border-black p-1 rounded-md mb-1">Back to shop</button></Link>
-                    <button className="border-solid border border-black  p-1 mr-1 rounded-md mb-1">Checkout</button>
+                    <Link to='/cart/checkout'> <button className="border-solid border border-black  p-1 mr-1 rounded-md mb-1">
+                        Checkout
+                    </button>
+                    </Link>
                 </div>
 
 

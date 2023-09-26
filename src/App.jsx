@@ -14,7 +14,7 @@ import { CartProvider } from './utils/Contexts/CartContext';
 import ProductOverview from './components/ProductOverview/ProductOverview';
 import SellerDashboard from './components/DashBoard/SellerDashboard/SellerDashboard';
 import AdminDashboard from './components/DashBoard/AdminDashboard/AdminDashboard';
-
+import CheckOut from './pages/CheckOut/CheckOut';
 
 function App() {
 
@@ -53,7 +53,7 @@ export const appRouter = createBrowserRouter([
       {
         path: "/overview/:id",
         element: <ProductOverview />,
-      }
+      },
 
     ],
   },
