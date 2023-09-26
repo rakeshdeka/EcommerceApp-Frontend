@@ -41,7 +41,7 @@ function Cart() {
 
                 <div className="flex justify-end gap-4">
                     <Link to='/'> <button className="border-solid border border-black p-1 rounded-md mb-1">Back to shop</button></Link>
-                    <Link to='/cart/checkout'> <button className="border-solid border border-black  p-1 mr-1 rounded-md mb-1">
+                    <Link to='/checkout'> <button className="border-solid border border-black  p-1 mr-1 rounded-md mb-1">
                         Checkout
                     </button>
                     </Link>

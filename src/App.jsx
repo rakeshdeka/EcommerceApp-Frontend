@@ -51,6 +51,11 @@ export const appRouter = createBrowserRouter([
         element: <Cart />,
       },
       {
+        path: "/checkout",
+        element: <CheckOut />,
+      },
+
+      {
         path: "/overview/:id",
         element: <ProductOverview />,
       },
