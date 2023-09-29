@@ -3,6 +3,7 @@ import { products } from "../../constants";
 
 import { useCart } from "../../utils/Contexts/CartContext";
 import { Link } from "react-router-dom";
+import { AiFillHeart } from 'react-icons/ai'
 
 
 function ProductCard() {
@@ -40,14 +41,16 @@ function ProductCard() {
                                         {product?.allSize?.size3}
                                     </span>
                                 </div>
-
-                                <button
-                                    type="button"
-                                    className="mt-4 w-full rounded-sm bg-black px-2 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-                                    onClick={() => addToCart(product)}
-                                >
-                                    Add to Cart
-                                </button>
+                                <div className="flex gap-1">
+                                    <button
+                                        type="button"
+                                        className="mt-4 w-full rounded-sm bg-black px-2 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                                        onClick={() => addToCart(product)}
+                                    >
+                                        Add to Cart
+                                    </button>
+                                    <AiFillHeart className="mt-4 w-8 h-8 cursor-pointer hover:text-red-600" />
+                                </div>
 
                             </div>
 
