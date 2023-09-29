@@ -15,6 +15,7 @@ import ProductOverview from './components/ProductOverview/ProductOverview';
 import SellerDashboard from './components/DashBoard/SellerDashboard/SellerDashboard';
 import AdminDashboard from './components/DashBoard/AdminDashboard/AdminDashboard';
 import CheckOut from './pages/CheckOut/CheckOut';
+import WishList from './pages/WishList/WishList';
 
 function App() {
 
@@ -49,6 +50,10 @@ export const appRouter = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
+      },
+      {
+        path: "/wishlist",
+        element: <WishList />
       },
       {
         path: "/checkout",
