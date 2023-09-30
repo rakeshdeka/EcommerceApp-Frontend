@@ -1,4 +1,5 @@
 import React from 'react'
+import { RxCross2 } from "react-icons/rx"
 
 const CheckOut = () => {
     return (
@@ -97,7 +98,45 @@ const CheckOut = () => {
 
 
                 </div>
-                <div className="grid-item border-t border-b border-r border-gray-300 bg-[#F3F4F6] w-[80%] flex mt-1 mb-1 rounded-r-xl">Div 2</div>
+                <div className="grid-item border-t border-b border-r border-gray-300 bg-[#F3F4F6] w-[80%] flex mt-1 mb-1 rounded-r-xl flex-col">
+                    <div className='border-b border-slate-300 w-[95%] h-[15%] flex justify-between items-center self-center'>
+                        <div className=' border w-32 h-[50%] flex justify-center rounded-md cursor-pointer'>
+                            <img className="h-[100%] " src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/fd17b420-b388-4c8a-aaaa-e0a98ddf175f/dunk-high-retro-shoe-DdRmMZ.png" alt="hero" />
+
+                        </div>
+                        <div className='w-[60%] h-[80%] flex flex-col justify-between'>
+                            <div className='h-8'>
+                                <p className='font-bold ml-1'> Nirvana t shirt</p>
+                            </div>
+                            <div className='h-8 max-w-[50%] ml-1 text-gray-400 font-semibold'> White</div>
+                            <div className=' h-8 max-w-[30%] ml-1 cursor-pointer'>X1</div>
+                        </div>
+                        <div className='w-[15%] h-[80%] flex flex-col  justify-between'>
+                            <div className=' h-8 w-full'>
+                                <h1 className='flex justify-end font-bold'>₹1,549</h1>
+                            </div>
+                            <div className=' h-8 self-end'>
+                                <RxCross2 className='cursor pointer hover:text-[red]' />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='w-[95%] h-[15%] self-center flex flex-col justify-between mt-2'>
+                        <div className='w-full h-[20%] flex justify-between'>
+                            <input className='w-[70%] h-full rounded-md focus:outline-none focus:border-slate-300 ' placeholder='Enter Coupon Code'></input>
+                            <button className='w-[25%] h-full bg-black rounded-md text-white'>Apply Coupon</button>
+                        </div>
+                        <div className='w-full h-[30%] flex justify-between'>
+                            <p className='w-[30%] h-[90%] '>Sub total:</p>
+                            <p className='w-[30%] h-[90%] flex justify-end font-bold'>₹1,14,399</p>
+                        </div>
+                        <div className='w-full h-[30%] flex justify-between'>
+                            <p className='w-[30%] h-[90%]'>Total:</p>
+                            <p className='w-[30%] h-[90%] flex justify-end font-bold'>₹1,14,399</p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </>
     )
