@@ -16,6 +16,8 @@ import SellerDashboard from './components/DashBoard/SellerDashboard/SellerDashbo
 import AdminDashboard from './components/DashBoard/AdminDashboard/AdminDashboard';
 import CheckOut from './pages/CheckOut/CheckOut';
 import WishList from './pages/WishList/WishList';
+import SignUp from './components/Authentication/SignUp/SignUp';
+import Login from './components/Authentication/Login/Login';
 
 function App() {
 
@@ -54,10 +56,12 @@ export const appRouter = createBrowserRouter([
       {
         path: "/wishlist",
         element: <WishList />
+        // element: <Login />
       },
       {
         path: "/checkout",
         element: <CheckOut />,
+        // element: <SignUp />,
       },
 
       {
