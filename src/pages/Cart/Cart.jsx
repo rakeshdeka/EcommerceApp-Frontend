@@ -1,7 +1,8 @@
 
 import { useCart } from "../../utils/Contexts/CartContext";
 import { Link } from "react-router-dom";
-import remove from '../../assets/square_remove.svg';
+// import remove from '../../assets/square_remove.svg';
+import { CiSquareRemove } from "react-icons/ci"
 function Cart() {
 
     const { item } = useCart();
@@ -10,7 +11,7 @@ function Cart() {
         <>
             <div className="border-solid border border-gray-300 w-1/2 flex flex-col justify-center mx-auto my-auto rounded-lg mt-1 mb-1">
                 <div>
-                    <h1 className="font-extrabold text-xl text-center">Your Cart</h1>
+                    <h1 className="font-extrabold text-xl text-center">Cart</h1>
                     <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum eius repellat ipsam, sit praesentium incidunt.</p>
                 </div>
 
@@ -28,7 +29,8 @@ function Cart() {
                                     <div className="border-solid p-1 w-10 text-center cursor-pointer">-</div>
                                 </div>
                                 <div className="ml-auto mr-1 mb-1 font-bold">{item?.price}</div>
-                                <img className="cursor-pointe" src={remove} alt="remove_icon" />
+                                {/* <img className="cursor-pointe" src={remove} alt="remove_icon" /> */}
+                                <CiSquareRemove className=" h-8 w-8 cursor-pointer" />
                             </div>
                         </div>
                     ))}
@@ -40,8 +42,8 @@ function Cart() {
                 </div>
 
                 <div className="flex justify-end gap-4">
-                    <Link to='/'> <button className="border-solid border border-black p-1 rounded-md mb-1">Back to shop</button></Link>
-                    <Link to='/checkout'> <button className="border-solid border border-black  p-1 mr-1 rounded-md mb-1">
+                    <Link to='/'> <button className="border-solid border border-black p-1 rounded-md mb-1 hover:bg-black hover:text-white">Back to shop</button></Link>
+                    <Link to='/checkout'> <button className="border-solid border border-black  p-1 mr-1 rounded-md mb-1 hover:bg-black hover:text-white">
                         Checkout
                     </button>
                     </Link>
