@@ -4,7 +4,7 @@ import { RxCross2 } from "react-icons/rx"
 const CheckOut = () => {
     return (
         <>
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-2 relative pt-[45px] sm:pt-[80px] ">
                 <div className="grid-item border-t border-b border-l border-gray-300 w-[80%]  flex flex-col justify-self-end mt-1 mb-1 rounded-l-xl">
                     <div className="p-4 border-gray-300 border-b ">
                         <h2 className="text-lg font-semibold mb-4">Customer Information</h2>

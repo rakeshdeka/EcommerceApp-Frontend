@@ -10,8 +10,8 @@ function ProductCard() {
     const { addToCart } = useCart();
     return (
         <>
-            <div className="flex flex-wrap justify-center " >
-                <div className="mx-auto grid w-full max-w-7xl items-center space-y-4 px-2 py-10 md:grid-cols-2 md:gap-6 md:space-y-0 lg:grid-cols-4">
+            <div className="flex flex-wrap justify-center  sm:pl-[190px]" >
+                <div className="mx-auto grid w-full max-w-7xl items-center space-y-4 px-2 py-10 grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6 md:space-y-0 xl:grid-cols-4">
                     {products.map((product) => (
                         <div key={product.id} className="rounded-md border">
 
@@ -22,22 +22,20 @@ function ProductCard() {
                             />
                             <div className="p-4">
                                 <Link to={`/overview/${product.id}`}>
-                                    <h1 className="inline-flex items-center text-lg font-semibold">{product?.name}</h1>
+                                    <h1 className="inline-flex items-center text-[.8rem] sm:text-lg font-semibold">{product?.name}</h1>
                                 </Link>
-                                <p className="mt-4 font-semibold">{product?.price}</p>
-                                <p className="mt-3 text-sm text-gray-600">
-                                    {product?.description}
-                                </p>
+                                <p className="mt-4 text-[.7rem] sm:text-sm font-semibold">{product?.price}</p>
+                                
 
                                 <div className="mt-5 flex items-center space-x-2">
-                                    <span className="block text-sm font-semibold">Size : </span>
-                                    <span className="block cursor-pointer rounded-md border border-gray-300 p-1 px-2 text-xs font-medium">
+                                    <span className="block sm:text-sm text-[.5rem]  font-semibold">Size : </span>
+                                    <span className="text-[.5rem] block cursor-pointer rounded-md border border-gray-300 p-1 px-2 sm:text-xs font-medium">
                                         {product?.allSize?.size1}
                                     </span>
-                                    <span className="block cursor-pointer rounded-md border border-gray-300 p-1 px-2 text-xs font-medium">
+                                    <span className="block cursor-pointer rounded-md border border-gray-300 p-1 px-2 text-[.5rem] sm:text-xs font-medium">
                                         {product?.allSize?.size2}
                                     </span>
-                                    <span className="block cursor-pointer rounded-md border border-gray-300 p-1 px-2 text-xs font-medium">
+                                    <span className="block cursor-pointer rounded-md border border-gray-300 p-1 px-2 text-[.5rem] sm:text-xs font-medium">
                                         {product?.allSize?.size3}
                                     </span>
                                 </div>

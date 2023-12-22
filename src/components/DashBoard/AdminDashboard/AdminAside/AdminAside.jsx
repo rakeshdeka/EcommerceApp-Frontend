@@ -1,31 +1,57 @@
-import React from 'react'
+import React from 'react';
 
 const AdminAside = ({ setAdminActiveComponent }) => {
-    return (
-        <>
-            <aside className="w-1/4 bg-gray-200 flex flex-col gap-2 text-center p-2">
-                <div>
-                    <img
-                        class="inline-block h-14 w-14 rounded-full"
-                        src="https://avatars.githubusercontent.com/u/58238022?v=4"
-                        alt="Dan_Abromov"
-                    />
-                    <p>Admin Name</p>
-                </div>
+  return (
+    <>
+      <aside className="w-1/4 bg-gray-200 flex flex-col gap-4 text-center p-4">
+        <div className="flex flex-col items-center">
+          <img
+            className="inline-block h-16 w-16 rounded-full mb-2"
+            src="https://avatars.githubusercontent.com/u/58238022?v=4"
+            alt="Admin Avatar"
+          />
+          <p className="text-gray-700 font-semibold">Admin Name</p>
+        </div>
 
+        <p
+          className="border border-black min-h-12 cursor-pointer hover:bg-slate-400 rounded-md p-2"
+          onClick={() => setAdminActiveComponent('AdminMainDash')}
+        >
+          Dashboard
+        </p>
+        <p
+          className="border border-black min-h-12 cursor-pointer hover:bg-slate-400 rounded-md p-2"
+          onClick={() => setAdminActiveComponent('Products')}
+        >
+          Products
+        </p>
+        <p
+          className="border border-black min-h-12 cursor-pointer hover:bg-slate-400 rounded-md p-2"
+          onClick={() => setAdminActiveComponent('Sellers')}
+        >
+          Sellers
+        </p>
+        <p
+          className="border border-black min-h-12 cursor-pointer hover:bg-slate-400 rounded-md p-2"
+          onClick={() => setAdminActiveComponent('Inventory')}
+        >
+          Inventory
+        </p>
+        <p
+          className="border border-black min-h-12 cursor-pointer hover:bg-slate-400 rounded-md p-2"
+          onClick={() => setAdminActiveComponent('UserMang')}
+        >
+          User Management
+        </p>
+        <p
+          className="border border-black min-h-12 cursor-pointer hover:bg-slate-400 rounded-md p-2"
+          onClick={() => setAdminActiveComponent('PromoDisc')}
+        >
+          Promotion & Discount
+        </p>
+      </aside>
+    </>
+  );
+};
 
-                <p className='border border-black min-h-10 cursor-pointer hover:bg-slate-400' onClick={() => setAdminActiveComponent('AdminMainDash')}>Dashboard</p>
-                <p className='border border-black min-h-10 cursor-pointer hover:bg-slate-400' onClick={() => setAdminActiveComponent('Products')}>Products</p>
-                <p className='border border-black min-h-10 cursor-pointer hover:bg-slate-400' onClick={() => setAdminActiveComponent('Sellers')}>Sellers</p>
-                <p className='border border-black min-h-10 cursor-pointer hover:bg-slate-400' onClick={() => setAdminActiveComponent('Inventory')}>Inventory</p>
-                <p className='border border-black min-h-10 cursor-pointer hover:bg-slate-400' onClick={() => setAdminActiveComponent('UserMang')}>User Management</p>
-                <p className='border border-black min-h-10 cursor-pointer hover:bg-slate-400' onClick={() => setAdminActiveComponent('PromoDisc')}>Promotion & Discount</p>
-
-
-            </aside>
-
-        </>
-    )
-}
-
-export default AdminAside
+export default AdminAside;

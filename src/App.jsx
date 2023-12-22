@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-// import Header from './components/Header/Header'
+// import React, { useState } from 'react';
+
 import Header from './components/Header/Header'
 import Body from './pages/Body/Body'
-import Footer from './components/Footer/Footer'
+// import Footer from './components/Footer/Footer'
 import AboutUs from './pages/AboutUs/AboutUs'
 import Cart from './pages/Cart/Cart'
 // import { Error } from './pages/Error';
 import { Error } from './pages/Error/Error'
 
-import './App.css'
+
 import { createBrowserRouter, Outlet } from 'react-router-dom'
 import { CartProvider } from './utils/Contexts/CartContext';
 import ProductOverview from './components/ProductOverview/ProductOverview';
@@ -16,21 +16,21 @@ import SellerDashboard from './components/DashBoard/SellerDashboard/SellerDashbo
 import AdminDashboard from './components/DashBoard/AdminDashboard/AdminDashboard';
 import CheckOut from './pages/CheckOut/CheckOut';
 import WishList from './pages/WishList/WishList';
-import SignUp from './components/Authentication/SignUp/SignUp';
-import Login from './components/Authentication/Login/Login';
+// import SignUp from './components/Authentication/SignUp/SignUp';
+// import Login from './components/Authentication/Login/Login';
 
 function App() {
 
 
 
   return (
-    <>
+    <div className=''>
       <CartProvider>
         <Header />
         <Outlet />
-        <Footer />
+        {/* <Footer /> */}
       </CartProvider>
-    </>
+    </div>
   )
 }
 
@@ -71,6 +71,7 @@ export const appRouter = createBrowserRouter([
 
     ],
   },
+ 
   {
     path: "/seller",
     element: <SellerDashboard />,

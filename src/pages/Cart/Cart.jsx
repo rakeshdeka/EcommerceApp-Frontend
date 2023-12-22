@@ -1,60 +1,55 @@
-
 import { useCart } from "../../utils/Contexts/CartContext";
 import { Link } from "react-router-dom";
-// import remove from '../../assets/square_remove.svg';
-import { CiSquareRemove } from "react-icons/ci"
+import { CiSquareRemove } from "react-icons/ci";
+
 function Cart() {
+  const { item } = useCart();
 
-    const { item } = useCart();
+  return (
+    <div className="h-full flex flex-col justify-center items-center relative pt-[45px] sm:pt-[80px]  ">
+    <div className="max-w-2xl mx-auto p-4 border border-gray-300 rounded-lg">
+      <h1 className="text-2xl font-bold mb-4">Your Cart</h1>
+     
 
-    return (
-        <>
-            <div className="border-solid border border-gray-300 w-1/2 flex flex-col justify-center mx-auto my-auto rounded-lg mt-1 mb-1">
-                <div>
-                    <h1 className="font-extrabold text-xl text-center">Cart</h1>
-                    <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum eius repellat ipsam, sit praesentium incidunt.</p>
-                </div>
+      {item.map((item, index) => (
+        <div key={index} className="flex items-center border border-gray-300 p-4 mb-4">
+          <img className="w-16 h-16 object-cover mr-4" src={item?.imageSrc} alt="" />
 
-                <div>
-                    {item.map((item, index) => (
-                        <div key={index} className="flex gap-1 border border-gray-300 ">
-                            <div className='w-1/4 border-solid border-r border-gray-300 flex justify-center items-center'>
-                                <img className="bg-slate-300 w-16 h-16 " src={item?.imageSrc} alt="" />
-                            </div>
-                            <div className=" w-3/4 flex place-items-end space-x-3 justify-center items-center">
-                                <div className="ml-1 mb-1 font-bold">{item?.name}</div>
-                                <div className="border-solid border border-gray-300 mt-1 ml-1 font-medium flex w-48 justify-center rounded-md">
-                                    <div className="border-solid border-r border-gray-300 p-1 w-10 text-center cursor-pointer" >+</div>
-                                    <div className="border-solid border-r border-gray-300 p-1 w-10 text-center cursor-pointer" >1</div>
-                                    <div className="border-solid p-1 w-10 text-center cursor-pointer">-</div>
-                                </div>
-                                <div className="ml-auto mr-1 mb-1 font-bold">{item?.price}</div>
-                                {/* <img className="cursor-pointe" src={remove} alt="remove_icon" /> */}
-                                <CiSquareRemove className=" h-8 w-8 cursor-pointer" />
-                            </div>
-                        </div>
-                    ))}
-                </div>
-
-                <div className="flex justify-end border-t border-gray-300">
-                    <p className="font-bold mr-1">Total amount: ₹00000</p>
-
-                </div>
-
-                <div className="flex justify-end gap-4">
-                    <Link to='/'> <button className="border-solid border border-black p-1 rounded-md mb-1 hover:bg-black hover:text-white">Back to shop</button></Link>
-                    <Link to='/checkout'> <button className="border-solid border border-black  p-1 mr-1 rounded-md mb-1 hover:bg-black hover:text-white">
-                        Checkout
-                    </button>
-                    </Link>
-                </div>
-
-
+          <div className="flex-grow">
+            <div className="font-semibold mb-1">{item?.name}</div>
+            <div className="flex items-center space-x-4">
+              <div className="border border-gray-300 p-1 cursor-pointer">+</div>
+              <div className="border border-gray-300 p-1">1</div>
+              <div className="border border-gray-300 p-1 cursor-pointer">-</div>
             </div>
+          </div>
 
+          <div className="flex items-center ml-4">
+            <div className="font-semibold mr-4">{item?.price}</div>
+            <CiSquareRemove className="h-6 w-6 cursor-pointer" />
+          </div>
+        </div>
+      ))}
 
+      <div className="flex justify-end border-t border-gray-300 mt-4 pt-4">
+        <p className="font-semibold">Total amount: ₹00000</p>
+      </div>
 
-        </>
-    )
+      <div className="flex justify-end mt-4 space-x-4">
+        <Link to='/'>
+          <button className="bg-gray-300 hover:bg-gray-400 text-black py-1 px-2 rounded-md">
+            Back to Shop
+          </button>
+        </Link>
+        <Link to='/checkout'>
+          <button className="bg-black text-white py-1 px-2 rounded-md">
+            Checkout
+          </button>
+        </Link>
+      </div>
+    </div>
+    </div>
+  );
 }
+
 export default Cart;
