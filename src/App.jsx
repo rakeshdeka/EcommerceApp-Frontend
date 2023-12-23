@@ -16,9 +16,13 @@ import SellerDashboard from './components/DashBoard/SellerDashboard/SellerDashbo
 import AdminDashboard from './components/DashBoard/AdminDashboard/AdminDashboard';
 import CheckOut from './pages/CheckOut/CheckOut';
 import WishList from './pages/WishList/WishList';
+import UserProfile from './components/UserProfile/UserProfile'
 // import SignUp from './components/Authentication/SignUp/SignUp';
 // import Login from './components/Authentication/Login/Login';
+import AddressBook from './pages/AddressBook/AddressBook'
 
+import OrderHistory from './pages/OrderHistory/OrderHistory'
+import AccountDeletion from './pages/AccountDeletion/AccountDeletion'
 function App() {
 
 
@@ -81,7 +85,29 @@ export const appRouter = createBrowserRouter([
     path: "/admin",
     element: <AdminDashboard />,
     errorElement: <Error />,
+  },
+  {
+    path:"/user",
+    element:<UserProfile/>,
+    errorElement:<Error/>,
+  },
+  {
+    path:"/order-history",
+    element:<OrderHistory/>,
+    errorElement:<Error/>
+  },
+  {
+    path:"/address-book",
+    element:<AddressBook/>,
+    errorElement:<Error/>
+
+  },
+  {
+    path:"/deactivate",
+    element:<AccountDeletion />,
+    errorElement:<Error/>
   }
+  
 ]);
 
 export default App

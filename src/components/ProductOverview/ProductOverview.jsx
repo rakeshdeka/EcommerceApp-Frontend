@@ -27,9 +27,9 @@ function ProductOverview() {
 
   return (
     <div className="border border-black">
-    <div className="p-2 flex flex-col md:flex-row justify-center  relative pt-[80px]">
+    <div className="p-2 flex flex-col md:flex-row justify-center md:gap-2 relative pt-[80px]">
       <div className="w-full md:w-1/2 flex justify-center border border-black h-[500px] ">
-        <div className="w-[40%] md:w-[30%] border-r border-red-600">
+        <div className="w-[25%] sm:w-[20%] border-r border-red-600">
           <div className="h-[25%] border border-black cursor-pointer">
             <img className="w-full h-full rounded-lg" src={product?.imageSrc} alt="" />
           </div>
@@ -43,7 +43,7 @@ function ProductOverview() {
             <img className="w-full h-full rounded-lg" src={product?.imageSrc} alt="" />
           </div>
         </div>
-        <div className="w-[70%] cursor-zoom-in">
+        <div className="w-[75%] sm:w-[80%] cursor-zoom-in">
           <img className="w-full h-full rounded-lg" src={product?.imageSrc} alt="" />
         </div>
         
@@ -155,7 +155,7 @@ function ProductOverview() {
       
     </div>
      <div className="mt-4">
-        {/* <h1>Related products</h1> */}
+        <h1 className="font-semibold">Related products</h1>
         <ProductCard cardPadding="sm:pl-0"/>
       </div>
     </div>

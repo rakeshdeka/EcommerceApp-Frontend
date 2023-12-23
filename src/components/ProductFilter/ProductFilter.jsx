@@ -13,9 +13,9 @@ const ProductFilter = () => {
           className="p-2 border border-gray-300 rounded-md w-full"
         >
           <option value="all">All</option>
-          <option value="men">Men</option>
-          <option value="women">Women</option>
-          <option value="kids">Kids</option>
+          <option value="men">Men 👨</option>
+          <option value="women">Women 👩‍🦱</option>
+          <option value="kids">Kids 👶</option>
         </select>
       </div>
       <div className="mb-4">
@@ -26,8 +26,8 @@ const ProductFilter = () => {
         >
           {/* Add color options dynamically */}
           <option value="all">All</option>
-          <option value="red">Red</option>
-          <option value="blue">Blue</option>
+          <option value="red">Red 🔴</option>
+          <option value="blue">Blue 🔵</option>
           {/* Add more color options as needed */}
         </select>
       </div>
