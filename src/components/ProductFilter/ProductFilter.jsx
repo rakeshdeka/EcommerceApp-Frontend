@@ -4,10 +4,10 @@ const ProductFilter = () => {
   
 
   return (
-    <div className="bg-gray-200 p-4 hidden sm:block fixed z-50">
-      <h2 className="text-lg font-bold mb-4">Filter Options</h2>
+    <div className="bg-gray-200 p-4 hidden sm:block fixed z-50 text-[.7rem]">
+      <h2 className="text-sm font-bold mb-4">Filter Options</h2>
       <div className="mb-4 sm:static">
-        <label className="block text-sm font-medium text-gray-600 mb-1">Category</label>
+        <label className="block text-xs font-medium text-gray-600 mb-1">Category</label>
         <select
          
           className="p-2 border border-gray-300 rounded-md w-full"
@@ -19,7 +19,7 @@ const ProductFilter = () => {
         </select>
       </div>
       <div className="mb-4">
-        <label className="block text-sm font-medium text-gray-600 mb-1">Color</label>
+        <label className="block text-xs font-medium text-gray-600 mb-1">Color</label>
         <select
         
           className="p-2 border border-gray-300 rounded-md w-full"
@@ -32,7 +32,7 @@ const ProductFilter = () => {
         </select>
       </div>
       <div className="mb-4">
-        <label className="block text-sm font-medium text-gray-600 mb-1">Size</label>
+        <label className="block text-xs font-medium text-gray-600 mb-1">Size</label>
         <select
           
           className="p-2 border border-gray-300 rounded-md w-full"
@@ -45,7 +45,7 @@ const ProductFilter = () => {
         </select>
       </div>
       <div className="mb-4">
-        <label className="block text-sm font-medium text-gray-600 mb-1">Brand</label>
+        <label className="block text-xs font-medium text-gray-600 mb-1">Brand</label>
         <select
          
           className="p-2 border border-gray-300 rounded-md w-full"

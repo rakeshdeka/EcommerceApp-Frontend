@@ -1,30 +1,30 @@
 
 import { GiClothes } from "react-icons/gi";
-import { BsCart4, BsFillBagHeartFill } from "react-icons/bs";
-import { FaSnowman } from "react-icons/fa6";
+// import { BsCart4, BsFillBagHeartFill } from "react-icons/bs";
+// import { FaSnowman } from "react-icons/fa6";
 import { Link } from "react-router-dom";
-import { GiHamburgerMenu } from "react-icons/gi";
-import HamburgerMenu from "./HamburgerMenu/HamburgerMenu";
-import { FaSearch } from "react-icons/fa";
+// import { GiHamburgerMenu } from "react-icons/gi";
+// import HamburgerMenu from "./HamburgerMenu/HamburgerMenu";
+// import { FaSearch } from "react-icons/fa";
 import { CiHeart } from "react-icons/ci";
 import { CiBag1 } from "react-icons/ci";
 import { CiUser } from "react-icons/ci";
 import { CiSearch } from "react-icons/ci";
-import { RxHamburgerMenu } from "react-icons/rx";
+// import { RxHamburgerMenu } from "react-icons/rx";
 function Header() {
   return (
-  <div className="h-20 flex justify-between fixed w-full bg-[#008000a8] z-10">
+  <div className="h-20 flex justify-between fixed w-full bg-[#008000a8] z-10 text-sm">
     
-       <Link to="/" className="w-[15%] border-[red] flex justify-center items-center">
+       <Link to="/" className="w-[15%]  flex justify-center items-center">
         <GiClothes className="w-10 h-10 text-black" />
       </Link>
     
-    <div className=" border border-black flex gap-2 justify-end w-[80%]">
-        <div className="hidden sm:flex items-center border border-black w-[80%] sm:w-[40%]">
+    <div className="  flex gap-2 justify-end w-[80%]">
+        <div className="hidden sm:flex items-center  w-[80%] sm:w-[40%]">
           <input
             type="text"
             placeholder=" 👚Search Products...."
-            className="p-2 border border-gray-300 rounded-md focus:outline-none w-full"
+            className="p-2 rounded-md focus:outline-none w-full"
           />
           {/* <select
             className="p-2 border border-gray-300 rounded-md ml-2 w-[40%]"
@@ -53,12 +53,12 @@ function Header() {
 
         </div> */}
         
-        <div className=" border border-black justify-center items-center flex gap-2 pr-2">
+        <div className=" justify-center items-center flex gap-2 pr-2">
           <CiSearch className="sm:hidden w-8 h-6 text-black hover:text-gray-300 cursor-pointer" />
 
           {/* <FaSearch  /> */}
           <Link to="/user">
-            <CiUser className=" w-8 h-6 text-black hover:text-gray-300 cursor-pointer" />
+            <CiUser className=" w-8 h-6 text-black hover:text-[blue] cursor-pointer" />
 
           {/* <FaSnowman  /> */}
         </Link>

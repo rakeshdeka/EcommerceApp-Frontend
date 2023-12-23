@@ -50,7 +50,7 @@ export const products = [
     },
     {
         id: 4,
-        name: 'Hannah Rick & Morty T-shirt',
+        name: 'Rick & Morty T-shirt',
         href: '#',
         description: " Women Graphic Printed Oversized Orginal T-shirt ",
         OrginalPrice: "₹2,549",

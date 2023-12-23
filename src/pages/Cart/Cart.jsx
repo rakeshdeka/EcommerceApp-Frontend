@@ -6,9 +6,12 @@ function Cart() {
   const { item } = useCart();
 
   return (
-    <div className="h-full flex flex-col justify-center items-center relative pt-[80px]  ">
-    <div className="max-w-2xl mx-auto p-4 border border-gray-300 rounded-lg">
-      <h1 className="text-2xl font-bold mb-4">Your Cart</h1>
+    <div className="h-full flex flex-col justify-center items-center relative pt-[80px] w-full">
+      <div className="border-b border-black w-full p-4">
+        <h1 className="text-xl font-semibold text-center ">Your Cart</h1>
+        </div>
+    <div className="max-w-2xl mx-auto p-4 border border-gray-300 rounded-lg mt-4">
+     
      
 
       {item.map((item, index) => (

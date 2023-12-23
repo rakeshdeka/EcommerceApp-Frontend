@@ -72,6 +72,12 @@ export const appRouter = createBrowserRouter([
         path: "/overview/:id",
         element: <ProductOverview />,
       },
+      {
+        path:"/user",
+    element:<UserProfile/>,
+   
+
+      }
 
     ],
   },
@@ -85,11 +91,6 @@ export const appRouter = createBrowserRouter([
     path: "/admin",
     element: <AdminDashboard />,
     errorElement: <Error />,
-  },
-  {
-    path:"/user",
-    element:<UserProfile/>,
-    errorElement:<Error/>,
   },
   {
     path:"/order-history",
