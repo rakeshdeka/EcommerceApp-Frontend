@@ -3,6 +3,7 @@ import { products } from "../../constants";
 import { useCart } from "../../utils/Contexts/CartContext";
 import { NotFound } from "./NotFound";
 import { useState } from "react";
+import ProductCard from "../ProductCard/ProductCard";
 
 function ProductOverview() {
   const { addToCart } = useCart();
@@ -25,9 +26,10 @@ function ProductOverview() {
   }
 
   return (
-    <div className="container mx-auto flex justify-center space-x-8 relative pt-[45px] sm:pt-[80px]">
-      <div className="w-1/2 flex justify-center border border-black h-[500px]">
-        <div className="w-[30%] border-r border-red-600">
+    <div className="border border-black">
+    <div className="p-2 flex flex-col md:flex-row justify-center  relative pt-[80px]">
+      <div className="w-full md:w-1/2 flex justify-center border border-black h-[500px] ">
+        <div className="w-[40%] md:w-[30%] border-r border-red-600">
           <div className="h-[25%] border border-black cursor-pointer">
             <img className="w-full h-full rounded-lg" src={product?.imageSrc} alt="" />
           </div>
@@ -46,7 +48,7 @@ function ProductOverview() {
         </div>
         
       </div>
-      <div className="w-1/2">
+      <div className=" w-full md:w-1/2 border border-black">
         <h1 className="mb-2 text-2xl font-bold">{product?.name}</h1>
         <p className="mb-2 text-gray-600">{product?.description}</p>
         <div className="flex items-center justify-between mb-4">
@@ -113,6 +115,35 @@ function ProductOverview() {
         </details>
         </div>
         <div className="border-t border-gray-300 mb-4">
+        <details>
+        <summary className="mt-2 mb-1 font-bold">Product Specifications</summary>
+        <ul className="list-disc ml-6">
+         <li>Material: {product?.material}</li>
+          <li>Dimensions: {product?.dimensions}</li>
+          <li>Weight: {product?.weight}</li>
+      {/* Add more specifications as needed */}
+        </ul>
+        </details>
+      </div>
+      <div className="border-t border-gray-300 mb-4">
+     <details>
+       <summary className="mt-2 mb-1 font-bold">Care Instructions</summary>
+       <p>{product?.careInstructions}</p>
+         </details>
+        </div>
+       <div className="border-t border-gray-300 mb-4">
+        <details>
+       <summary className="mt-2 mb-1 font-bold">Shipping Information</summary>
+        <p>Free shipping on orders over $50. Standard delivery takes 3-5 business days.</p>
+        </details>
+        </div>
+        <div className="border-t border-gray-300 mb-4">
+          <details>
+         <summary className="mt-2 mb-1 font-bold">Return Policy</summary>
+       <p>{product?.returnPolicy}</p>
+         </details>
+        </div>
+        <div className="border-t border-gray-300 mb-4">
           <details>
           <summary className="border-b font-bold border-gray-300 mt-2 mb-1">
             Customer Reviews
@@ -120,6 +151,12 @@ function ProductOverview() {
           <p>this is good</p>
           </details>
         </div>
+      </div>
+      
+    </div>
+     <div className="mt-4">
+        {/* <h1>Related products</h1> */}
+        <ProductCard cardPadding="sm:pl-0"/>
       </div>
     </div>
   );

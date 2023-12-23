@@ -59,12 +59,12 @@ const ProductFilter = () => {
       </div>
      <div className="flex justify-between">
   <button
-    className="p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
+    className="p-2 bg-black text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
   >
     Apply
   </button>
   <button
-    className="p-2 bg-gray-300 text-gray-600 rounded-md hover:bg-gray-400 focus:outline-none focus:ring focus:border-gray-300"
+    className="p-2 bg-black text-gray-600 rounded-md hover:bg-gray-400 focus:outline-none focus:ring focus:border-gray-300"
   >
     Reset
   </button>

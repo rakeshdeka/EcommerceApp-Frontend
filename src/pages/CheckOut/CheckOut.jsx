@@ -68,7 +68,7 @@ const CheckOut = () => {
                         <form>
                             <div className="mb-4">
                                 <label className="block text-gray-600">
-                                    <input type="checkbox" id="sameBilling" name="sameBilling" className="form-checkbox mr-2" />
+                                    <input type="checkbox" id="sameBilling" name="sameBilling" className=" accent-black form-checkbox mr-2" />
                                     Same as Shipping
                                 </label>
                             </div>

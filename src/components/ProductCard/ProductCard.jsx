@@ -6,12 +6,12 @@ import { Link } from "react-router-dom";
 import { AiFillHeart } from 'react-icons/ai'
 
 
-function ProductCard() {
+function ProductCard({ cardPadding }) {
     const { addToCart } = useCart();
     return (
         <>
-            <div className="flex flex-wrap justify-center  sm:pl-[190px]" >
-                <div className="mx-auto grid w-full max-w-7xl items-center space-y-4 px-2 py-10 grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6 md:space-y-0 xl:grid-cols-4">
+            <div className={` flex flex-wrap justify-center ${cardPadding}`} >
+                <div className=" mx-auto grid w-full max-w-7xl items-center space-y-4 px-2 py-10 grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6 md:space-y-0 xl:grid-cols-4">
                     {products.map((product) => (
                         <div key={product.id} className="rounded-md border">
 
