@@ -1,12 +1,12 @@
 import React from 'react';
 
 const Inventory = () => {
-  // Dummy data for demonstration
+
   const inventoryItems = [
     { id: 1, productName: 'Product 1', quantity: 100, lowStockThreshold: 20 },
     { id: 2, productName: 'Product 2', quantity: 50, lowStockThreshold: 10 },
     { id: 3, productName: 'Product 3', quantity: 75, lowStockThreshold: 15 },
-    // Add more inventory items as needed
+
   ];
 
   return (

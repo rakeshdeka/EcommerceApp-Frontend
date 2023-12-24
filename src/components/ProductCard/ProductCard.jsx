@@ -4,10 +4,19 @@ import { products } from "../../constants";
 import { useCart } from "../../utils/Contexts/CartContext";
 import { Link } from "react-router-dom";
 import { AiFillHeart } from 'react-icons/ai'
+import { useState } from "react";
+import { useWishLIst } from "../../utils/Contexts/WishListContext";
 
 
 function ProductCard({ cardPadding }) {
-    const { addToCart } = useCart();
+    const { addToCart,isAddClicked} = useCart();
+    const {addToWishList,isWishClicked}= useWishLIst();
+
+    // const [isClicked, setIsClicked] = useState(false);  
+    // const handleOnCart=(e)=>{
+    //     console.log(e);
+    //     setIsClicked(true)
+    // }
     return (
         <>
             <div className={` flex flex-wrap justify-center ${cardPadding}`} >
@@ -41,14 +50,26 @@ function ProductCard({ cardPadding }) {
                                     </span>
                                 </div>
                                 <div className="flex gap-1 text-[.7rem] ">
-                                    <button
+                                  
+                                   <button
                                         type="button"
-                                        className="mt-4 w-full rounded-sm bg-black px-2 py-1.5 font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-                                        onClick={() => addToCart(product)}
+                                        disabled={isAddClicked[product.id]}
+                                        className={`mt-4 w-full rounded-sm ${isAddClicked[product.id] ? 'bg-[grey]' : 'bg-[black]'}  px-2 py-1.5 font-semibold text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black`}
+                                        onClick={() =>{ addToCart(product)
+                                    
+                                       
+                                        }}
                                     >
-                                        Add to Cart
+                                        {/* Add to Cart */}
+                                        {isAddClicked[product.id]? "Already on cart"  :"Add To Cart"}
                                     </button>
-                                    <AiFillHeart className="mt-4 w-8 h-8 cursor-pointer hover:text-red-600" />
+                                 
+                                 
+                                    <AiFillHeart className={`mt-4 w-8 h-8 cursor-pointer ${isWishClicked[product.id] ? 'text-red-600':'text-[black]'}`} onClick={()=>{
+                                        addToWishList(product);
+                                        //  handleOnCart(product);
+                                        
+                                    }}/>
                                 </div>
 
                             </div>

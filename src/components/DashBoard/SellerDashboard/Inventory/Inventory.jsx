@@ -4,18 +4,18 @@ const Inventory = () => {
   const initialProducts = [
     { id: 1, name: 'Product 1', price: 20, quantity: 50 },
     { id: 2, name: 'Product 2', price: 30, quantity: 30 },
-    // Add more products as needed
+  
   ];
 
   const [products, setProducts] = useState(initialProducts);
 
   const handleEdit = (productId) => {
-    // Implement edit functionality as needed
+ 
     console.log(`Edit product with ID ${productId}`);
   };
 
   const handleDelete = (productId) => {
-    // Filter out the product with the specified ID
+
     const updatedProducts = products.filter((product) => product.id !== productId);
     setProducts(updatedProducts);
   };

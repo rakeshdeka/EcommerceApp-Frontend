@@ -1,12 +1,12 @@
 import React from 'react';
 
 const PromoDisc = () => {
-  // Dummy data for demonstration
+
   const promotions = [
     { id: 1, name: 'Summer Sale', discountPercentage: 20, startDate: '2023-06-01', endDate: '2023-06-30' },
     { id: 2, name: 'Clearance Sale', discountPercentage: 30, startDate: '2023-07-15', endDate: '2023-07-31' },
     { id: 3, name: 'Holiday Special', discountPercentage: 25, startDate: '2023-12-01', endDate: '2023-12-31' },
-    // Add more promotions as needed
+
   ];
 
   return (

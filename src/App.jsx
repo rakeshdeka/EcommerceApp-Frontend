@@ -11,6 +11,7 @@ import { Error } from './pages/Error/Error'
 
 import { createBrowserRouter, Outlet } from 'react-router-dom'
 import { CartProvider } from './utils/Contexts/CartContext';
+import { WishListProvider } from './utils/Contexts/WishListContext'
 import ProductOverview from './components/ProductOverview/ProductOverview';
 import SellerDashboard from './components/DashBoard/SellerDashboard/SellerDashboard';
 import AdminDashboard from './components/DashBoard/AdminDashboard/AdminDashboard';
@@ -30,9 +31,11 @@ function App() {
   return (
     <div className=''>
       <CartProvider>
+        <WishListProvider>
         <Header />
         <Outlet />
         {/* <Footer /> */}
+        </WishListProvider>
       </CartProvider>
     </div>
   )

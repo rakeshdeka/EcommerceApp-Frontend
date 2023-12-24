@@ -4,13 +4,17 @@ const CartContext = createContext();
 
 export function CartProvider({ children }) {
     const [item, setItem] = useState([]);
+     const [isAddClicked, setIsAddClicked] = useState(false);  
+     console.log("on the cart",item);
+   
 
     const addToCart = (product) => {
         setItem([...item, product]);
+         setIsAddClicked((prevStates) => ({ ...prevStates, [product.id]: true }))
     };
 
     return (
-        <CartContext.Provider value={{ item, addToCart }}>
+        <CartContext.Provider value={{ item, addToCart,isAddClicked }}>
             {children}
         </CartContext.Provider>
     );

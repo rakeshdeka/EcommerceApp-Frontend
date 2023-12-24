@@ -1,12 +1,12 @@
 import React from 'react';
 
 const Products = () => {
-  // Dummy data for demonstration
+
   const products = [
     { id: 1, name: 'Product 1', price: 29.99, stock: 50 },
     { id: 2, name: 'Product 2', price: 39.99, stock: 30 },
     { id: 3, name: 'Product 3', price: 49.99, stock: 20 },
-    // Add more products as needed
+  
   ];
 
   return (

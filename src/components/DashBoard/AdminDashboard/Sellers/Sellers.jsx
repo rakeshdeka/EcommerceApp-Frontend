@@ -1,12 +1,12 @@
 import React from 'react';
 
 const Sellers = () => {
-  // Dummy data for demonstration
+
   const sellers = [
     { id: 1, name: 'Seller 1', email: 'seller1@example.com', productsCount: 20 },
     { id: 2, name: 'Seller 2', email: 'seller2@example.com', productsCount: 15 },
     { id: 3, name: 'Seller 3', email: 'seller3@example.com', productsCount: 25 },
-    // Add more sellers as needed
+
   ];
 
   return (
