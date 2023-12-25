@@ -1,39 +1,50 @@
-import React from 'react';
+// import React, { useState } from 'react';
 
 const PromoDisc = () => {
-
-  const promotions = [
-    { id: 1, name: 'Summer Sale', discountPercentage: 20, startDate: '2023-06-01', endDate: '2023-06-30' },
-    { id: 2, name: 'Clearance Sale', discountPercentage: 30, startDate: '2023-07-15', endDate: '2023-07-31' },
-    { id: 3, name: 'Holiday Special', discountPercentage: 25, startDate: '2023-12-01', endDate: '2023-12-31' },
-
+ 
+  const initialPromoDiscs = [
+    { id: 1, name: '20% Off Sale', discount: 20, isActive: true },
+    { id: 2, name: 'Free Shipping', discount: 0, isActive: false },
+ 
   ];
 
+
+
   return (
-    <div>
-      <h2 className="text-3xl font-bold mb-4">Promotion & Discount Management</h2>
+    <div className="container mx-auto mt-8">
+      <h2 className="text-2xl font-bold mb-4">Promotions and Discounts</h2>
       <table className="min-w-full border border-gray-300">
         <thead>
-          <tr>
-            <th className="py-2 px-4 border-b">ID</th>
-            <th className="py-2 px-4 border-b">Promotion Name</th>
-            <th className="py-2 px-4 border-b">Discount Percentage</th>
-            <th className="py-2 px-4 border-b">Start Date</th>
-            <th className="py-2 px-4 border-b">End Date</th>
-            <th className="py-2 px-4 border-b">Actions</th>
+          <tr className="bg-gray-100">
+            <th className="py-2 px-4 border">ID</th>
+            <th className="py-2 px-4 border">Name</th>
+            <th className="py-2 px-4 border">Discount (%)</th>
+            <th className="py-2 px-4 border">Status</th>
+            <th className="py-2 px-4 border">Actions</th>
           </tr>
         </thead>
         <tbody>
-          {promotions.map(promotion => (
-            <tr key={promotion.id}>
-              <td className="py-2 px-4 border-b">{promotion.id}</td>
-              <td className="py-2 px-4 border-b">{promotion.name}</td>
-              <td className="py-2 px-4 border-b">{`${promotion.discountPercentage}%`}</td>
-              <td className="py-2 px-4 border-b">{promotion.startDate}</td>
-              <td className="py-2 px-4 border-b">{promotion.endDate}</td>
-              <td className="py-2 px-4 border-b">
-                <button className="bg-blue-500 text-white px-2 py-1 rounded-md mr-2">Edit</button>
-                <button className="bg-red-500 text-white px-2 py-1 rounded-md">Delete</button>
+          {initialPromoDiscs.map((promoDisc) => (
+            <tr key={promoDisc.id} className="bg-white">
+              <td className="py-2 px-4 border">{promoDisc.id}</td>
+              <td className="py-2 px-4 border">{promoDisc.name}</td>
+              <td className="py-2 px-4 border">{promoDisc.discount}%</td>
+              <td className={`py-2 px-4 border ${promoDisc.isActive ? 'text-green-600' : 'text-red-600'}`}>
+                {promoDisc.isActive ? 'Active' : 'Inactive'}
+              </td>
+              <td className="py-2 px-4 border">
+                <button
+                  
+                  className="text-blue-500 hover:underline mr-2"
+                >
+                  Edit
+                </button>
+                <button
+                 
+                  className="text-red-500 hover:underline"
+                >
+                  Delete
+                </button>
               </td>
             </tr>
           ))}

@@ -16,7 +16,8 @@ function Header() {
   <div className="h-20 flex justify-between fixed w-full bg-[black] z-10 text-sm border-b border-white">
     
        <Link to="/" className="w-[15%]  flex justify-center items-center pl-2">
-        <GiClothes className="w-10 h-10 text-white" />
+        {/* <GiClothes className="w-10 h-10 text-white" /> */}
+        <strong className="text-white text-2xl">EStore</strong>
       </Link>
     
     <div className="  flex gap-2 justify-end w-[80%]">

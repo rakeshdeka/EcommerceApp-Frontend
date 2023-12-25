@@ -27,7 +27,7 @@ const AdminDashboard = () => {
                     {adminActiveComponent === 'UserMang' && <UserMang />}
                     {adminActiveComponent === 'PromoDisc' && <PromoDisc />}
                 </div>
-                <AdminFooter />
+                {/* <AdminFooter /> */}
             </div>
 
         </>

@@ -1,38 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const UserMang = () => {
-  // Dummy data for demonstration
-  const users = [
-    { id: 1, username: 'User1', email: 'user1@example.com', role: 'Customer' },
-    { id: 2, username: 'User2', email: 'user2@example.com', role: 'Admin' },
-    { id: 3, username: 'User3', email: 'user3@example.com', role: 'Customer' },
-    // Add more users as needed
+
+  const initialCustomers = [
+    { id: 1, name: 'Customer 1', email: 'customer1@example.com', orders: 5 },
+    { id: 2, name: 'Customer 2', email: 'customer2@example.com', orders: 8 },
+  
   ];
 
+ 
+
   return (
-    <div>
-      <h2 className="text-3xl font-bold mb-4">User Management</h2>
-      <table className="min-w-full border border-gray-300">
-        <thead>
-          <tr>
-            <th className="py-2 px-4 border-b">ID</th>
-            <th className="py-2 px-4 border-b">Username</th>
-            <th className="py-2 px-4 border-b">Email</th>
-            <th className="py-2 px-4 border-b">Role</th>
-            <th className="py-2 px-4 border-b">Actions</th>
+    <div className="container mx-auto mt-8">
+      <h2 className="text-2xl font-bold mb-4">Customer Information</h2>
+      <table className="min-w-full border border-gray-300 bg-[#00800059]">
+        <thead >
+          <tr className="">
+            <th className="py-2 px-4 border">Customer ID</th>
+            <th className="py-2 px-4 border">Name</th>
+            <th className="py-2 px-4 border">Email</th>
+            <th className="py-2 px-4 border">Total Orders</th>
           </tr>
         </thead>
         <tbody>
-          {users.map(user => (
-            <tr key={user.id}>
-              <td className="py-2 px-4 border-b">{user.id}</td>
-              <td className="py-2 px-4 border-b">{user.username}</td>
-              <td className="py-2 px-4 border-b">{user.email}</td>
-              <td className="py-2 px-4 border-b">{user.role}</td>
-              <td className="py-2 px-4 border-b">
-                <button className="bg-blue-500 text-white px-2 py-1 rounded-md mr-2">Edit</button>
-                <button className="bg-red-500 text-white px-2 py-1 rounded-md">Delete</button>
-              </td>
+          {initialCustomers.map((customer) => (
+            <tr key={customer.id} className="bg-white">
+              <td className="py-2 px-4 border">{customer.id}</td>
+              <td className="py-2 px-4 border">{customer.name}</td>
+              <td className="py-2 px-4 border">{customer.email}</td>
+              <td className="py-2 px-4 border">{customer.orders}</td>
             </tr>
           ))}
         </tbody>

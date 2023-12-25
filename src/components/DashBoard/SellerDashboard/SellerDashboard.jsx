@@ -27,7 +27,7 @@ const SellerDashboard = () => {
                     {activeComponent === 'PromoDisc' && <SellerPromoDisc />}
                 </div>
 
-                <SellerFooter />
+                {/* <SellerFooter /> */}
             </div>
         </>
     );

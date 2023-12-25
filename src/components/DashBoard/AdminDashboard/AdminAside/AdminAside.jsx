@@ -14,37 +14,37 @@ const AdminAside = ({ setAdminActiveComponent }) => {
         </div>
 
         <p
-          className="border border-black min-h-12 cursor-pointer hover:bg-slate-400 rounded-md p-2"
+          className="border border-black min-h-12  cursor-pointer bg-black text-white hover:underline rounded-md p-2"
           onClick={() => setAdminActiveComponent('AdminMainDash')}
         >
           Dashboard
         </p>
         <p
-          className="border border-black min-h-12 cursor-pointer hover:bg-slate-400 rounded-md p-2"
+          className="border border-black min-h-12 cursor-pointer  bg-black text-white hover:underline rounded-md p-2"
           onClick={() => setAdminActiveComponent('Products')}
         >
           Products
         </p>
         <p
-          className="border border-black min-h-12 cursor-pointer hover:bg-slate-400 rounded-md p-2"
+          className="border border-black min-h-12 cursor-pointer bg-black text-white hover:underline rounded-md p-2"
           onClick={() => setAdminActiveComponent('Sellers')}
         >
           Sellers
         </p>
         <p
-          className="border border-black min-h-12 cursor-pointer hover:bg-slate-400 rounded-md p-2"
+          className="border border-black min-h-12 cursor-pointer bg-black text-white hover:underline rounded-md p-2"
           onClick={() => setAdminActiveComponent('Inventory')}
         >
           Inventory
         </p>
         <p
-          className="border border-black min-h-12 cursor-pointer hover:bg-slate-400 rounded-md p-2"
+          className="border border-black min-h-12 cursor-pointer bg-black text-white hover:underline rounded-md p-2"
           onClick={() => setAdminActiveComponent('UserMang')}
         >
           User Management
         </p>
         <p
-          className="border border-black min-h-12 cursor-pointer hover:bg-slate-400 rounded-md p-2"
+          className="border border-black min-h-12 cursor-pointer bg-black text-white hover:underline rounded-md p-2"
           onClick={() => setAdminActiveComponent('PromoDisc')}
         >
           Promotion & Discount
