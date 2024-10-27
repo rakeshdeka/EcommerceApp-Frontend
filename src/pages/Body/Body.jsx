@@ -3,6 +3,7 @@ import { FaGithub } from "react-icons/fa";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import ProductFilter from "../../components/ProductFilter/ProductFilter";
 import Footer from "../../components/Footer/Footer";
+import Header from "../../components/Header/Header";
 
 function Body() {
 
@@ -10,7 +11,11 @@ function Body() {
   
 
   return (
-    <div className="flex relative min-h-screen pt-[45px] sm:pt-[80px] ">
+    <div>
+      <Header/>
+
+
+    {/* <div className="flex relative min-h-screen pt-[45px] sm:pt-[80px] ">
       <ProductFilter className="" />
       <div className="flex-grow relative ">
    
@@ -22,7 +27,13 @@ function Body() {
           <span>Developed by Rakesh</span>
         </div>
       </div>
+    </div> */}
+
+    <div className=" h-screen flex justify-center items-center text-xl text-slate-400 font-semibold">
+      Landing Page coming soon
+
     </div>
+        </div>
   );
 }
 

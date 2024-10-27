@@ -1,12 +1,13 @@
 // import React, { useState } from 'react';
 
-import Header from './components/Header/Header'
+// import Header from './components/Header/Header'
 import Body from './pages/Body/Body'
 // import Footer from './components/Footer/Footer'
 import AboutUs from './pages/AboutUs/AboutUs'
 import Cart from './pages/Cart/Cart'
 // import { Error } from './pages/Error';
 import { Error } from './pages/Error/Error'
+import ProductList from './components/ProductList/ProductList'
 
 
 import { createBrowserRouter, Outlet } from 'react-router-dom'
@@ -32,7 +33,7 @@ function App() {
     <div className=''>
       <CartProvider>
         <WishListProvider>
-        <Header />
+        {/* <Header /> */}
         <Outlet />
         {/* <Footer /> */}
         </WishListProvider>
@@ -41,6 +42,9 @@ function App() {
   )
 }
 
+function setTitle(title) {
+  document.title = title;
+}
 export const appRouter = createBrowserRouter([
   {
     path: "/",
@@ -59,16 +63,22 @@ export const appRouter = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
+        
       },
       {
         path: "/wishlist",
-        element: <WishList />
-        // element: <Login />
+        element: <WishList />,
+        
+      },
+      {
+        path: "/product-list",
+        element: <ProductList />,
+        
       },
       {
         path: "/checkout",
         element: <CheckOut />,
-        // element: <SignUp />,
+        
       },
 
       {

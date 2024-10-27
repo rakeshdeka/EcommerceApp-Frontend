@@ -1,152 +1,90 @@
+// import React from 'react';
+import { Link } from 'react-router-dom';
 
-import { RxCross2 } from "react-icons/rx"
+const Checkout = () => {
+  return (
+    <div>
+          <div className=" border-b py-8 px-3 flex items-center justify-between">
+        <Link to='/'>
+         <img
+          src="https://cdn.freelogovectors.net/wp-content/uploads/2021/02/myntra-logo-freelogovectors.net_.png" 
+          alt="Logo"
+          className="h-10"
+        />
+        </Link>
+   <h1 className="text-lg text-center">BAG -------- ADDRESS -------- PAYMENT</h1>
+   <div className=" flex items-center">
+    <img
+          src="https://constant.myntassets.com/checkout/assets/img/sprite-secure.png" 
+          alt="Logo"
+          className="h-10"
+        />
+        <p>100 % SECURE</p>
+   </div>
+      </div>
+       <div className="flex flex-col lg:flex-row gap-6 p-6 px-20 text-sm">
+      {/* Left Section */}
+      <div className="flex-1 border-r border-slate-100 px-2">
+        <h2 className="text-xl font-semibold">Select Delivery Address</h2>
+        <h3 className="text-gray-500 mt-4 text-sm">DEFAULT ADDRESS</h3>
 
-const CheckOut = () => {
-    return (
-        <>
-            <div className="grid grid-cols-2 relative pt-[80px] text-[.6rem] sm:text-sm ">
-                <div className=" p-2 grid-item border-t border-b border-l border-gray-300 w-full sm:w-[80%]  flex flex-col justify-self-end mt-1 mb-1 rounded-l-xl">
-                    <div className="p-4 border-gray-300 border-b ">
-                        <h2 className="text-lg font-semibold mb-4">Customer Information</h2>
-                        <form>
-                            <div className="mb-4">
-                                <label htmlFor="fullname" className="block text-gray-600">Full Name</label>
-                                <input type="text" id="fullname" name="fullname" className=" border border-gray-300 form-input mt-1 block w-full" />
-                            </div>
+        <div className="border border-gray-300 rounded-lg p-4 mt-2 shadow-sm">
+          <div className="flex items-center gap-2">
+            <h4 className="text-lg font-semibold">Rakesh Deka</h4>
+            <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full">HOME</span>
+          </div>
+          <p className="text-gray-700 mt-1 text-sm">
+            Near Ganesh Mandir, Ganesh Nagar, Guwahati College road, Bamunimaidan<br />
+            Guwahati, Assam - 781021<br />
+            Mobile: <strong>7002436065</strong>
+          </p>
+          <p className="text-green-600 mt-2 text-sm">• Pay on Delivery available</p>
+          <div className="flex gap-4 mt-4">
+            <button className="border border-gray-400 text-gray-600 rounded px-4 py-1 hover:bg-gray-100">REMOVE</button>
+            <button className="border border-gray-400 text-gray-600 rounded px-4 py-1 hover:bg-gray-100">EDIT</button>
+          </div>
+        </div>
 
-                            <div className="mb-4">
-                                <label htmlFor="contact" className="block text-gray-600">Contact No</label>
-                                <input type="tel" id="contact" name="contact" className=" border border-gray-300 form-input mt-1 block w-full" />
-                            </div>
-                        </form>
-                    </div>
-                    <div className="p-4 border-gray-300 border-b">
-                        <h2 className="text-lg font-semibold mb-4">Payment Details</h2>
-                        <form>
-                            <div className="mb-4">
-                                <label htmlFor="cardNumber" className="block text-gray-600">Card Number</label>
-                                <input type="text" id="cardNumber" name="cardNumber" className="border border-gray-300  form-input mt-1 block w-full" />
-                            </div>
+        <button className="text-pink-500 mt-4 text-sm font-semibold hover:underline">+ Add New Address</button>
+      </div>
 
-                            <div className="mb-4">
-                                <label htmlFor="expiration" className="block text-gray-600">Expiration Date(MM/YY)</label>
-                                <input type="text" id="expiration" name="expiration" className="border border-gray-300  form-input mt-1 block w-full" />
-                            </div>
+      {/* Right Section */}
+      <div className="flex-1">
+        <h3 className="text-gray-500 text-sm">DELIVERY ESTIMATES</h3>
+        <div className="border border-gray-300 rounded-lg p-4 mt-2 shadow-sm flex items-center gap-4">
+          <img src="https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F85%2F44%2F85448075f2777ef3743c8453cd6e6cca413ca95f.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]" alt="Product" className="w-12 h-12 object-cover rounded-full" />
+          <p className="text-gray-700 text-sm">Estimated delivery by <strong>4 Nov 2024</strong></p>
+        </div>
 
-                            <div className="mb-4">
-                                <label htmlFor="cvc" className="block text-gray-600">CVC</label>
-                                <input type="text" id="cvc" name="cvc" className="border border-gray-300  form-input mt-1 block w-full" />
-                            </div>
-                        </form>
-                    </div>
+        <div className="border border-gray-300 rounded-lg p-4 mt-4 shadow-sm space-y-3">
+          <h3 className="text-gray-500 text-sm">PRICE DETAILS (1 Item)</h3>
+          <div className="flex justify-between mt-2 text-sm">
+            <span>Total MRP</span>
+            <span>₹1,799</span>
+          </div>
+          <div className="flex justify-between mt-1 text-sm text-green-600">
+            <span>Discount on MRP</span>
+            <span>- ₹1,116</span>
+          </div>
+          <div className="flex justify-between mt-1 text-sm text-blue-600">
+            <span>Platform Fee</span>
+            <span>FREE</span>
+          </div>
+          <div className="flex justify-between mt-1 text-sm text-blue-600">
+            <span>Shipping Fee</span>
+            <span>FREE</span>
+          </div>
+          <div className="border-t border-gray-300 mt-2 pt-2 flex justify-between font-semibold text-sm">
+            <span>Total Amount</span>
+            <span>₹683</span>
+          </div>
+          <button className="w-full bg-pink-500 text-white py-2 mt-4 font-semibold hover:bg-pink-600">CONTINUE</button>
+        </div>
+      </div>
+    </div>
+    </div>
+   
+  );
+};
 
-                    <div className="p-4 border-b border-gray-300 ">
-                        <h2 className="text-lg font-semibold mb-4">Shipping Address</h2>
-                        <form>
-                            <div className="mb-4">
-                                <label htmlFor="address" className="block text-gray-600">Address</label>
-                                <input type="text" id="address" name="address" className="border border-gray-300 form-input mt-1 block w-full" />
-                            </div>
-                            <div className="mb-4">
-                                <label htmlFor="city" className="block text-gray-600">City</label>
-                                <input type="text" id="city" name="city" className="border border-gray-300 form-input mt-1 block w-full" />
-                            </div>
-
-                            <div className="mb-4">
-                                <label htmlFor="state" className="block text-gray-600">State/Province</label>
-                                <input type="text" id="state" name="state" className="border border-gray-300 form-input mt-1 block w-full" />
-                            </div>
-
-                            <div className="mb-4">
-                                <label htmlFor="postal" className="block text-gray-600">Postal Code</label>
-                                <input type="text" id="postal" name="postal" className="border border-gray-300 form-input mt-1 block w-full" />
-                            </div>
-                        </form>
-                    </div>
-                    <div className="p-4">
-                        <h2 className="text-lg font-semibold mb-4">Billing Information</h2>
-                        <form>
-                            <div className="mb-4">
-                                <label className="block text-gray-600">
-                                    <input type="checkbox" id="sameBilling" name="sameBilling" className=" accent-black form-checkbox mr-2" />
-                                    Same as Shipping
-                                </label>
-                            </div>
-                            <div className="mb-4">
-                                <label htmlFor="address" className="block text-gray-600">Address</label>
-                                <input type="text" id="address" name="address" className=" border border-gray-300 form-input mt-1 block w-full" />
-                            </div>
-
-                            <div className="mb-4">
-                                <label htmlFor="city" className="block text-gray-600">City</label>
-                                <input type="text" id="city" name="city" className="border border-gray-300 form-input mt-1 block w-full" />
-                            </div>
-
-                            <div className="mb-4">
-                                <label htmlFor="state" className="block text-gray-600">State/Province</label>
-                                <input type="text" id="state" name="state" className="border border-gray-300 form-input mt-1 block w-full" />
-                            </div>
-
-                            <div className="mb-4">
-                                <label htmlFor="postal" className="block text-gray-600">Postal Code</label>
-                                <input type="text" id="postal" name="postal" className="border border-gray-300 form-input mt-1 block w-full" />
-                            </div>
-                        </form>
-                    </div>
-
-
-
-
-                </div>
-                <div className=" p-2 grid-item border-t border-b border-r border-gray-300 bg-[#F3F4F6] w-full sm:w-[80%] flex mt-1 mb-1 rounded-r-xl flex-col">
-                    <div className=' border-b border-slate-300 w-[95%] h-[15%] flex justify-between items-center self-center'>
-                        <div className=' border w-32 h-[50%] flex justify-center rounded-md cursor-pointer'>
-                            <img className="h-[100%] " src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/fd17b420-b388-4c8a-aaaa-e0a98ddf175f/dunk-high-retro-shoe-DdRmMZ.png" alt="hero" />
-
-                        </div>
-                        <div className='w-[60%] h-[80%] flex flex-col justify-between'>
-                            <div className='h-8'>
-                                <p className='font-bold ml-1'> Nirvana t shirt</p>
-                            </div>
-                            <div className='h-8 max-w-[50%] ml-1 text-gray-400 font-semibold'> White</div>
-                            <div className=' h-8 max-w-[30%] ml-1 cursor-pointer'>X1</div>
-                        </div>
-                        <div className='w-[15%] h-[80%] flex flex-col  justify-between'>
-                            <div className=' h-8 w-full'>
-                                <h1 className='flex justify-end font-bold'>₹1,549</h1>
-                            </div>
-                            <div className=' h-8 self-end'>
-                                <RxCross2 className='cursor pointer hover:text-[red]' />
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className=' w-[95%] h-[15%] self-center flex flex-col justify-between mt-2'>
-                        <div className='w-full h-[20%] flex justify-between'>
-                            <input className='w-[70%] h-full rounded-md focus:outline-none focus:border-slate-300 ' placeholder='Enter Coupon Code'></input>
-                            <button className='w-[25%] h-full bg-black rounded-md text-white'>Apply</button>
-                        </div>
-                        <div className='w-full h-[30%] flex justify-between'>
-                            <p className='w-[30%] h-[90%] '>Sub total:</p>
-                            <p className='w-[30%] h-[90%] flex justify-end font-bold'>₹1,14,399</p>
-                        </div>
-                        <div className='w-full h-[30%] flex justify-between'>
-                            <p className='w-[30%] h-[90%]'>Total:</p>
-                            <p className='w-[30%] h-[90%] flex justify-end font-bold'>₹1,14,399</p>
-                        </div>
-                        
-
-                    </div>
-                    <div className=' text-center my-8 border bg-black'>
-                            <button className='p-2'>
-                                <span className='text-white'>Proceed to pay</span>
-                            </button>
-                        </div>
-
-                </div>
-            </div>
-        </>
-    )
-}
-
-export default CheckOut;
+export default Checkout;

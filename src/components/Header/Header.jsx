@@ -1,72 +1,60 @@
 
-import { GiClothes } from "react-icons/gi";
-// import { BsCart4, BsFillBagHeartFill } from "react-icons/bs";
-// import { FaSnowman } from "react-icons/fa6";
-import { Link } from "react-router-dom";
-// import { GiHamburgerMenu } from "react-icons/gi";
-// import HamburgerMenu from "./HamburgerMenu/HamburgerMenu";
-// import { FaSearch } from "react-icons/fa";
+import {  FaSearch } from 'react-icons/fa';
+import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { CiHeart } from "react-icons/ci";
-import { CiBag1 } from "react-icons/ci";
-import { CiUser } from "react-icons/ci";
-import { CiSearch } from "react-icons/ci";
-// import { RxHamburgerMenu } from "react-icons/rx";
+import { FiUser } from "react-icons/fi";
+import { Link } from 'react-router-dom';
+
 function Header() {
   return (
-  <div className="h-20 flex justify-between fixed w-full bg-[black] z-10 text-sm border-b border-white">
-    
-       <Link to="/" className="w-[15%]  flex justify-center items-center pl-2">
-        {/* <GiClothes className="w-10 h-10 text-white" /> */}
-        <strong className="text-white text-2xl">EStore</strong>
-      </Link>
-    
-    <div className="  flex gap-2 justify-end w-[80%]">
-        <div className="hidden sm:flex items-center  w-[80%] sm:w-[40%]">
-          <input
-            type="text"
-            placeholder=" 👚Search Products...."
-            className="p-2 rounded-md focus:outline-none w-full"
-          />
-         
-
-        </div>
-        <div>
-          
-        </div>
+    <header className="flex items-center justify-between px-6 py-5 shadow-md bg-white">
+      {/* Logo */}
+      <div className="flex items-center space-x-4">
+        <Link to='/'>
        
-         
-           
-
-
-        
-        <div className=" justify-center items-center flex gap-2 pr-2">
-          <CiSearch className="sm:hidden w-8 h-6 text-white hover:text-gray-300 cursor-pointer" />
-
-          {/* <FaSearch  /> */}
-          <Link to="/user">
-            <CiUser className=" w-8 h-6 text-white  hover:text-[blue] cursor-pointer" />
-
-          {/* <FaSnowman  /> */}
-        </Link>
-        <Link to="/wishlist">
-          <CiHeart className=" w-8 h-6 text-white hover:text-[red] cursor-pointer" />
-          {/* <BsFillBagHeartFill  /> */}
-        </Link>
-        <Link to="/cart">
-          <CiBag1 className="w-6 h-6 text-white hover:text-[green] cursor-pointer"/>
-
-          {/* <BsCart4  /> */}
-        </Link>
-        </div>
-        {/* <div className="sm:hidden border border-black p-2 w-[12%] flex justify-center items-center cursor-pointer">
-          <RxHamburgerMenu className="text-xl" onClick={HamburgerMenu} />
-
-        </div> */}
+        <img
+          src="https://cdn.freelogovectors.net/wp-content/uploads/2021/02/myntra-logo-freelogovectors.net_.png" // Replace with the actual logo image
+          alt="Logo"
+          className="h-10"
+        />
+         </Link>
+        <nav className="flex space-x-6 text-gray-700 text-sm font-bold">
+          <a href="#" className="hover:text-gray-900">MEN</a>
+          <a href="#" className="hover:text-gray-900">WOMEN</a>
+          <a href="#" className="hover:text-gray-900">KIDS</a>
+          <a href="#" className="hover:text-gray-900">HOME & LIVING</a>
+          <a href="#" className="hover:text-gray-900">BEAUTY</a>
+          <a href="#" className="text-pink-500 font-bold relative">STUDIO <span className=" absolute -top-1 -right-8 text-xs text-pink-500">NEW</span></a>
+        </nav>
       </div>
-    
 
+      {/* Search Bar */}
+      <div className="relative flex items-center">
+        <FaSearch className="absolute left-3 text-gray-500" />
+        <input
+          type="text"
+          placeholder="Search for products, brands and more"
+          className=" w-96 px-10 py-2 rounded-md focus:outline-none bg-[#F5F5F6] focus:bg-white focus:ring-1 text-sm focus:ring-slate-200"
+        />
+      </div>
 
-  </div>
+      {/* Icons */}
+      <div className="flex items-center space-x-6 text-gray-700">
+        <div className="flex flex-col items-center cursor-pointer hover:text-gray-900">
+          <FiUser className="text-xl" />
+          <span className="text-xs font-bold">Profile</span>
+        </div>
+        <Link to='/wishlist' className="flex flex-col items-center cursor-pointer hover:text-gray-900">
+          <CiHeart  className="text-xl" />
+          <span className="text-xs font-bold">Wishlist</span>
+        </Link>
+        <Link to='/cart' className="relative flex flex-col items-center cursor-pointer hover:text-gray-900">
+          <HiOutlineShoppingBag className=" text-xl" />
+          <span className="text-xs font-bold">Bag</span>
+          <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">1</span>
+        </Link>
+      </div>
+    </header>
   );
 }
 

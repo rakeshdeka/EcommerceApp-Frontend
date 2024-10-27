@@ -1,74 +1,101 @@
 
-import { useWishLIst } from "../../utils/Contexts/WishListContext";
-// import { products } from "../../constants";
-import { Link } from "react-router-dom";
-// import { AiFillHeart } from 'react-icons/ai'
-import { useCart } from "../../utils/Contexts/CartContext";
+import { RxCross1 } from "react-icons/rx";
+import Header from "../../components/Header/Header";
 const WishList = () => {
-    const {wishItem}=useWishLIst();
-    const {addToCart}=useCart();
- 
+  const wishlistItems = [
+    {
+      id: 1,
+      image: "https://assets.ajio.com/medias/sys_master/root/20240716/n9tw/6696adcd1d763220fac889c2/-473Wx593H-466952704-blue-MODEL.jpg", // Replace with actual image URL
+      name: "LOCOMOTIVE Premium Dob...",
+      price: 1959,
+      originalPrice: 3199,
+      discountPercent: 44,
+      inStock: true,
+    },
+    {
+      id: 2,
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBVz4sA3LYPMIRWe21Qhq4oVY2cV6O7tjbbQ&s", // Replace with actual image URL
+      name: "Flying Machine Men Printed...",
+      price: 2799,
+      originalPrice: 2799,
+      discountPercent: 0,
+      inStock: false,
+    },
+    {
+      id: 3,
+      image: "https://www.fastrack.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dwb39f8c9d/images/Fastrack/Catalog/3287KM06_2.jpg?sw=800&sh=800", // Replace with actual image URL
+      name: "Fastrack Men Black Brass Di...",
+      price: 1495,
+      originalPrice: 1495,
+      discountPercent: 0,
+      inStock: true,
+    },
+    {
+      id: 4,
+      image: "https://assets.myntassets.com/w_412,q_60,dpr_2,fl_progressive/assets/images/1700944/2019/6/8/488007ef-c65e-4a2f-a92b-65b6846894861559989274078-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Round-Neck-T-Shirt--1.jpg", // Replace with actual image URL
+      name: "HRX by Hrithik Roshan Men ...",
+      price: 597,
+      originalPrice: 2299,
+      discountPercent: 74,
+      inStock: true,
+    },
+  ];
 
   return (
-    <>
-     <div className="flex flex-col flex-wrap justify-center pt-[80px] text-xs ">
-       <div className="text-xl font-semibold p-4 border-b border-black  ">
-        <h1 className="text-center">Wishlist</h1>
-       </div>
-                <div className=" mx-auto grid w-full max-w-7xl items-center px-2 py-10 grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6 md:space-y-0 xl:grid-cols-4">
-                   {wishItem.map((wishItem,index)=>(
-                        <div key={index} className="  border-black border w-[200px]">
-
-                            <img
-                                src={wishItem?.imageSrc}
-                                alt="Laptop"
-                                className="aspect-[16/9] w-full rounded-md md:aspect-auto h-[200px] md:h-[200px] lg:h-[200px]"
-                            />
-                            <div className="p-4">
-                                <Link to={`/overview/1`}>
-                                    <h1 className="inline-flex items-center text-[.8rem] font-semibold">{wishItem?.name}</h1>
-                                </Link>
-                                <p className="mt-2 text-[.7rem] font-semibold">{wishItem?.price}</p>
-                                
-
-        
-                                <div className="flex gap-1">
-                                    <button
-                                        type="button"
-                                        className="mt-4 w-full rounded-sm bg-black px-2 py-1.5  font-semibold text-white shadow-sm hover:bg-[green] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-                                        onClick={addToCart}
-                                    >
-                                        Move To Cart
-                                    </button>
-                                   
-                                </div>
-                                <div className="flex gap-1 ">
-                                    <button
-                                        type="button"
-                                        className="mt-4 w-full rounded-sm bg-black hover:bg-[red] px-2 py-1.5 font-semibold text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-                                        
-                                    >
-                                        Remove
-                                    </button>
-                                   
-                                </div>
-
-                            </div>
-
-                        </div>
-                       ) )}
-                        
-                 
+    <div>
+        <Header/>
+         <div className="bg-gray-50 min-h-screen p-10 px-20 ">
+      <h1 className=" text-base font-semibold mb-4">
+        My Wishlist <span className="text-gray-500 text-base font-normal">118 items</span>
+      </h1>
+      
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {wishlistItems.map(item => (
+          <div key={item.id} className="bg-white border border-slate-100 overflow-hidden relative">
+            {/* Close button */}
+            <button className="absolute top-2 right-2 bg-[#C6C6C6] p-1.5 rounded-full z-50">
+              <RxCross1  className=" text-xs"/>
+            </button>
+            
+            {/* Image with out of stock overlay */}
+            <div className="relative">
+              <img src={item.image} alt={item.name} className="w-full h-96 object-cover" />
+              {!item.inStock && (
+                <div className="absolute inset-0 bottom-0 bg-gray-500 bg-opacity-75 flex items-end justify-center">
+                  <div className="bg-[#FFFFFF] text-orange-500 text-sm px-7 py-1">
+                    OUT OF STOCK
+                  </div>
                 </div>
-
+              )}
             </div>
 
-        =
+            {/* Item details */}
+            <div className="p-4">
+              <h2 className="text-sm font-semibold">{item.name}</h2>
+              <div className="flex items-baseline space-x-2 mt-2">
+                <span className="text-lg font-semibold text-gray-900">Rs.{item.price}</span>
+                {item.discountPercent > 0 && (
+                  <>
+                    <span className="text-gray-400 line-through">Rs.{item.originalPrice}</span>
+                    <span className="text-red-500 text-sm">{item.discountPercent}% OFF</span>
+                  </>
+                )}
+              </div>
+            
+             
+             
+            </div>
+             <div className=" border-t border border-slate-100 py-4">
+ <button className="text-pink-600 text-sm font-bold w-full">
+                {item.inStock ? "MOVE TO BAG" : "SHOW SIMILAR"}
+              </button>
+              </div>
+          </div>
+        ))}
+      </div>
+    </div>
 
-        </>
-    
-    
-     
+    </div>
    
   );
 };
