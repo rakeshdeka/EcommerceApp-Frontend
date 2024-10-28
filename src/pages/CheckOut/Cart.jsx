@@ -4,24 +4,7 @@ const Cart = () => {
   return (
     
       <div className="bg-white min-h-screen p-8">
-      <div className=" border-b py-3 flex items-center justify-between">
-        <Link to='/'>
-         <img
-          src="https://cdn.freelogovectors.net/wp-content/uploads/2021/02/myntra-logo-freelogovectors.net_.png"
-          alt="Logo"
-          className="h-10"
-        />
-        </Link>
-   <h1 className="text-lg text-center">BAG -------- ADDRESS -------- PAYMENT</h1>
-   <div className=" flex items-center">
-    <img
-          src="https://constant.myntassets.com/checkout/assets/img/sprite-secure.png" 
-          alt="Logo"
-          className="h-10"
-        />
-        <p>100 % SECURE</p>
-   </div>
-      </div>
+    
      
       <div className="flex flex-col md:flex-row justify-between px-20">
         {/* Left Side - Bag Details */}
@@ -133,7 +116,7 @@ const Cart = () => {
               <p>Total Amount</p>
               <p>₹599</p>
             </div>
-            <Link to='/checkout'>
+            <Link to='/checkout/address'>
             <button className="w-full mt-4 bg-pink-500 text-white py-2 font-bold">
               PLACE ORDER
             </button>

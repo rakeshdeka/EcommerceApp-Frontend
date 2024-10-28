@@ -40,15 +40,15 @@ function Header() {
 
       {/* Icons */}
       <div className="flex items-center space-x-6 text-gray-700">
-        <div className="flex flex-col items-center cursor-pointer hover:text-gray-900">
+        <Link to='/my/dashboard' className="flex flex-col items-center cursor-pointer hover:text-gray-900">
           <FiUser className="text-xl" />
           <span className="text-xs font-bold">Profile</span>
-        </div>
+        </Link>
         <Link to='/wishlist' className="flex flex-col items-center cursor-pointer hover:text-gray-900">
           <CiHeart  className="text-xl" />
           <span className="text-xs font-bold">Wishlist</span>
         </Link>
-        <Link to='/cart' className="relative flex flex-col items-center cursor-pointer hover:text-gray-900">
+        <Link to='/checkout/bag' className="relative flex flex-col items-center cursor-pointer hover:text-gray-900">
           <HiOutlineShoppingBag className=" text-xl" />
           <span className="text-xs font-bold">Bag</span>
           <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">1</span>

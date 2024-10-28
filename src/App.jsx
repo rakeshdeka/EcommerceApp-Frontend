@@ -1,30 +1,29 @@
-// import React, { useState } from 'react';
-
-// import Header from './components/Header/Header'
 import Body from './pages/Body/Body'
-// import Footer from './components/Footer/Footer'
 import AboutUs from './pages/AboutUs/AboutUs'
-import Cart from './pages/Cart/Cart'
-// import { Error } from './pages/Error';
+import Cart from './pages/CheckOut/Cart'
 import { Error } from './pages/Error/Error'
 import ProductList from './components/ProductList/ProductList'
-
-
 import { createBrowserRouter, Outlet } from 'react-router-dom'
 import { CartProvider } from './utils/Contexts/CartContext';
 import { WishListProvider } from './utils/Contexts/WishListContext'
 import ProductOverview from './components/ProductOverview/ProductOverview';
-import SellerDashboard from './components/DashBoard/SellerDashboard/SellerDashboard';
 import AdminDashboard from './components/DashBoard/AdminDashboard/AdminDashboard';
 import CheckOut from './pages/CheckOut/CheckOut';
 import WishList from './pages/WishList/WishList';
-import UserProfile from './components/UserProfile/UserProfile'
-// import SignUp from './components/Authentication/SignUp/SignUp';
-// import Login from './components/Authentication/Login/Login';
-import AddressBook from './pages/AddressBook/AddressBook'
-
-import OrderHistory from './pages/OrderHistory/OrderHistory'
 import AccountDeletion from './pages/AccountDeletion/AccountDeletion'
+import MyDash from './pages/MyDash/MyDash'
+import OrdersReturns from './pages/MyDash/OrdersReturns/OrdersReturns'
+import Overview from './pages/MyDash/Overview/Overview'
+import Coupon from './pages/MyDash/Coupon'
+import Profile from './pages/MyDash/Profile'
+import MynCash from './pages/MyDash/MynCash'
+import MyntraCredit from './pages/MyDash/MyntraCredit'
+import SavedCards from './pages/MyDash/SavedCards'
+import SavedUPI from './pages/MyDash/SavedUPI'
+import SavedWalletsBNPL from './pages/MyDash/SavedWalletsBNPL'
+import Address from './pages/MyDash/Address'
+import CheckOutAddress from "./pages/CheckOut/Address"
+
 function App() {
 
 
@@ -41,10 +40,6 @@ function App() {
     </div>
   )
 }
-
-function setTitle(title) {
-  document.title = title;
-}
 export const appRouter = createBrowserRouter([
   {
     path: "/",
@@ -60,11 +55,7 @@ export const appRouter = createBrowserRouter([
         path: "/about",
         element: <AboutUs />,
       },
-      {
-        path: "/cart",
-        element: <Cart />,
-        
-      },
+    
       {
         path: "/wishlist",
         element: <WishList />,
@@ -78,6 +69,11 @@ export const appRouter = createBrowserRouter([
       {
         path: "/checkout",
         element: <CheckOut />,
+        children:[
+
+          { path:"bag", element:<Cart/>},
+          { path:"address", element:< CheckOutAddress/>},
+        ]
         
       },
 
@@ -85,37 +81,32 @@ export const appRouter = createBrowserRouter([
         path: "/overview/:id",
         element: <ProductOverview />,
       },
-      {
-        path:"/user",
-    element:<UserProfile/>,
-   
-
-      }
+          {
+        path: "/my/dashboard",
+        element: <MyDash />,
+        children: [
+          { path: "", element: <Overview /> },
+          { path: "orders", element: <OrdersReturns /> },
+          { path: "coupons", element: <Coupon /> },
+          { path: "myntra-credit", element: <MyntraCredit /> },
+          { path: "myncash", element: <MynCash /> },
+          { path: "profile", element: <Profile /> },
+          { path: "saved-cards", element: <SavedCards /> },
+          { path: "saved-upi", element: <SavedUPI /> },
+          { path: "saved-wallets-bnpl", element: <SavedWalletsBNPL /> },
+           { path: "addresses", element: <Address /> },
+        ],
+      },
 
     ],
   },
  
   {
-    path: "/seller",
-    element: <SellerDashboard />,
-    errorElement: <Error />,
-  },
-  {
     path: "/admin",
     element: <AdminDashboard />,
     errorElement: <Error />,
   },
-  {
-    path:"/order-history",
-    element:<OrderHistory/>,
-    errorElement:<Error/>
-  },
-  {
-    path:"/address-book",
-    element:<AddressBook/>,
-    errorElement:<Error/>
-
-  },
+ 
   {
     path:"/deactivate",
     element:<AccountDeletion />,
