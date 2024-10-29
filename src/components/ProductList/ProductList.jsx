@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { FaHeart, FaFilter, FaSearch } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Header from '../Header/Header';
+import ProductCard from '../ProductCard/ProductCard';
+import SortMenu from './components/SortMenu';
 
 const filters = {
   categories: [
@@ -165,28 +167,31 @@ const ProductPage = () => {
     <div>
         <Header/>
 
-          <div className="px-10 py-5">
+          <div className=" py-5">
       {/* Breadcrumbs */}
-      <nav className="text-gray-500 text-sm">
-        <Link to="/" className="hover:text-gray-700">Home</Link> / <Link to="/clothing" className="hover:text-gray-700">Clothing</Link> / Mens Apparel
+      <nav className="text-gray-800 text-sm px-4">
+        <Link to="/" className="hover:text-gray-900">Home</Link> / <Link to="/clothing" className="hover:text-gray-900">Clothing</Link> / <span className=' text-black font-semibold'>Mens Apparel</span> 
       </nav>
       
       {/* Title and Filter Counts */}
-      <div className="mt-2 mb-4 flex justify-between items-center">
-        <h1 className="text-lg font-semibold">Mens Apparel - 486 items</h1>
-        <div className="text-gray-500 text-sm">Sort by: <span className="text-gray-800 font-semibold">Recommended</span></div>
+      <div className="mt-2 mb-4 flex justify-between items-center px-4">
+        <h1 className="text-sm font-semibold">Mens Apparel - <span className='font-normal text-gray-400' >486 items</span> </h1>
+        {/* <div className="text-gray-500 text-sm">Sort by: <span className="text-gray-800 font-semibold">Recommended</span></div> */}
+      <SortMenu/>
       </div>
 
       <div className="flex space-x-10">
         {/* Sidebar Filters */}
-        <aside className="w-1/4 space-y-5">
-          <div className="mb-6">
-            <h2 className="text-lg font-semibold mb-3">FILTERS</h2>
-            <button onClick={() => setSelectedFilters([])} className="text-pink-600 font-semibold">CLEAR ALL</button>
+        <aside className="w-[15%] space-y-5">
+          <div className="mb-6 flex justify-between items-center px-4">
+            <h2 className="text-sm font-bold">FILTERS</h2>
+            <button onClick={() => setSelectedFilters([])} className="text-[#FF3F6C] font-semibold text-xs">CLEAR ALL</button>
           </div>
 
+<div className=' border border-slate-200 p-5 px-8 space-y-6'>
 
- <div className="mb-5">
+
+ <div className="mb-5 text-xs">
             <h3 className="text-gray-800 font-bold mb-2">CATEGORIES</h3>
             {filters.categories.map((category) => (
               <div key={category.name} className="flex items-center mb-2">
@@ -206,7 +211,7 @@ const ProductPage = () => {
           </div>
 
           {/* Brand Filter */}
-          <div>
+          <div className=' text-xs'>
             <h3 className="text-gray-800 font-bold mb-2">BRAND</h3>
             {filters.brands.map((brand) => (
               <div key={brand.name} className="flex items-center mb-2">
@@ -224,7 +229,7 @@ const ProductPage = () => {
             ))}
           </div>
           {/* Price Filter */}
-          <div>
+          <div className=' text-xs'>
             <h3 className="text-gray-800 font-bold mb-2">PRICE</h3>
             <input
               type="range"
@@ -248,7 +253,7 @@ const ProductPage = () => {
           </div>
 
           {/* Color Filter */}
-          <div>
+          <div className=' text-xs'>
             <h3 className="text-gray-800 font-bold mb-2">COLOR</h3>
             {filters.colors.map((color) => (
               <div key={color.name} className="flex items-center mb-2">
@@ -269,7 +274,7 @@ const ProductPage = () => {
           </div>
 
           {/* Discount Filter */}
-          <div>
+          <div className='text-xs'>
             <h3 className="text-gray-800 font-bold mb-2">DISCOUNT RANGE</h3>
             {filters.discounts.map((discount) => (
               <div key={discount} className="flex items-center mb-2">
@@ -285,14 +290,15 @@ const ProductPage = () => {
               </div>
             ))}
           </div>
+          </div>
         </aside>
 
         {/* Product List */}
-        <main className="w-3/4">
+        <main className="w-[85%] pr-5">
           {/* Selected Filters */}
           <div className="flex items-center mb-4 space-x-2">
             {selectedFilters.map((filter, index) => (
-              <span key={index} className="bg-gray-200 px-3 py-1 rounded-full text-sm flex items-center">
+              <span key={index} className=" border border-slate-200 text-xs hover:border-slate-400 transition-colors px-3 py-1 rounded-full flex items-center">
                 {filter}
                 <button
                   onClick={() => handleFilterClick(filter)}
@@ -303,21 +309,12 @@ const ProductPage = () => {
               </span>
             ))}
           </div>
+          {/* <SortMenu/> */}
 
           {/* Product Cards */}
           <div className="grid grid-cols-4 gap-6">
             {products.map((product) => (
-              <div key={product.id} >
-                <img src={product.imageUrl} alt={product.brand} className="w-full h-60 object-cover mb-4" />
-                <h2 className="text-gray-800 font-bold px-2">{product.brand}</h2>
-                <p className="text-sm text-gray-600 px-2">{product.description}</p>
-                <div className="flex items-center space-x-2 mt-2 px-2">
-                  <span className="text-red-600 font-semibold">Rs. {product.price}</span>
-                  <span className="line-through text-gray-500 text-sm">Rs. {product.originalPrice}</span>
-                  <span className="text-red-500 font-bold text-xs">({product.discount}% OFF)</span>
-                </div>
-                
-              </div>
+              <ProductCard key={product.id} product={product}/>
             ))}
           </div>
         </main>
