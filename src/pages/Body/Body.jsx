@@ -125,7 +125,8 @@ import asset113 from "../../assets/landing_images/10/asset_113.jpeg"
 import asset114 from "../../assets/landing_images/10/asset_114.jpeg"
 import asset115 from "../../assets/landing_images/10/asset_115.jpeg"
 import downloadApp from "../../assets/landing_images/download_app.jpg"
-
+// import Footer from "../../components/Footer/Footer.";
+import Footer from "../../components/Footer/Footer.jsx";
 
 
 
@@ -236,13 +237,6 @@ const newImageArray = [
   { src: asset115, alt: "Asset 115" },
 ];
 
-
-
-
-
-
-
-
 const sliderSettings = {
   dots: true,
   infinite: true,
@@ -278,7 +272,7 @@ const sliderSettings2 = {
   return (
     <div>
       <Header/>
-    <div className=" h-screen text-xl text-slate-400 font-semibold">
+    <div className=" text-xl text-slate-400 font-semibold">
       <div className="flex justify-center pt-4 ">
         <img src={asset3} className="w-[320px] h-fit object-cover"  alt="" />
         <img src={asset4} className="w-[320px] h-fit object-cover"  alt="" />
@@ -365,6 +359,7 @@ const sliderSettings2 = {
         
     
     </div>
+    <Footer/>
         </div>
   );
 }

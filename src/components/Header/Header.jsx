@@ -583,77 +583,37 @@ const beautyCategories = [
     <div className="relative top-6 p-6 bg-white shadow-xl w-full">
         <div className="w-10 h-10 bg-white transform rotate-45 absolute top-0 z-0 translate-x-0 transition-transform group-hover:translate-x-[12rem] duration-500 ease-in-out rounded-sm"></div>
         <div className="relative z-10">
-            <div className="grid grid-cols-2">
-                <div>
-                    <ul className="mt-1 text-xs ">
-                        <li>
-                            <a href="#" className="block -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800  hover:text-indigo-600">
-                                Hello Rakesh
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 hover:text-indigo-600">
-                                Orders
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 hover:text-indigo-600">
-                                Wishlist
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 hover:text-indigo-600">
-                                Gift Cards
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 hover:text-indigo-600">
-                                Contact Us
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 hover:text-indigo-600">
-                                Myntra Insider
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 hover:text-indigo-600">
-                                Myntra Credit
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 hover:text-indigo-600">
-                                Coupons
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 hover:text-indigo-600">
-                                Saved Cards
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 hover:text-indigo-600">
-                                Saved VPA
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 hover:text-indigo-600">
-                                Saved Addresses
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 hover:text-indigo-600">
-                                Edit Profile
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-br hover:from-indigo-50 hover:to-pink-50 hover:via-blue-50 transition ease-in-out duration-300 text-gray-800 hover:text-indigo-600">
-                                Logout
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            <div className=" w-56 p-2 border-gray-200">
+      <div className="mb-6">
+        <h2 className="font-bold text-xs">Hello Rakesh</h2>
+        <p className="text-gray-600 text-xs">7002436065</p>
+      </div>
+      <ul className="space-y-2 text-xs">
+        <li className="text-gray-800 hover:text-blue-500 cursor-pointer">Orders</li>
+        <li className="text-gray-800 hover:text-blue-500 cursor-pointer">Wishlist</li>
+        <li className="text-gray-800 hover:text-blue-500 cursor-pointer">Gift Cards</li>
+        <li className="text-gray-800 hover:text-blue-500 cursor-pointer">Contact Us</li>
+        <li className="text-gray-800 flex items-center hover:text-blue-500 cursor-pointer">
+          Myntra Insider
+          <span className="ml-2 text-xs bg-red-500 text-white rounded-full px-2">New</span>
+        </li>
+        <li className="border-t border-gray-200 pt-4">
+          <ul className="space-y-2">
+            <li className="text-gray-800 hover:text-blue-500 cursor-pointer">Myntra Credit</li>
+            <li className="text-gray-800 hover:text-blue-500 cursor-pointer">Coupons</li>
+            <li className="text-gray-800 hover:text-blue-500 cursor-pointer">Saved Cards</li>
+            <li className="text-gray-800 hover:text-blue-500 cursor-pointer">Saved VPA</li>
+            <li className="text-gray-800 hover:text-blue-500 cursor-pointer">Saved Addresses</li>
+          </ul>
+        </li>
+        <li className="border-t border-gray-200 pt-4">
+          <ul className="space-y-2">
+            <li className="text-gray-800 hover:text-blue-500 cursor-pointer">Edit Profile</li>
+            <li className="text-gray-800 hover:text-blue-500 cursor-pointer">Logout</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
         </div>
     </div>
 </div>
