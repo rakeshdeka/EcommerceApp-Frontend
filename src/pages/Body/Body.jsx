@@ -125,12 +125,7 @@ import asset113 from "../../assets/landing_images/10/asset_113.jpeg"
 import asset114 from "../../assets/landing_images/10/asset_114.jpeg"
 import asset115 from "../../assets/landing_images/10/asset_115.jpeg"
 import downloadApp from "../../assets/landing_images/download_app.jpg"
-// import Footer from "../../components/Footer/Footer.";
 import Footer from "../../components/Footer/Footer.jsx";
-
-
-
-
 
 
 function Body() {

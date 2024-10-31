@@ -2,10 +2,10 @@
 
 const MegaMenu = ({Categories}) => {
   return (
- <div className="absolute top-full mt-2 transition-all duration-500 ease-in-out opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-2 z-50 min-w-[700px]">
-      <div className="relative bg-white shadow-xl p-6 rounded-md ">
+ <div className="absolute top-full transition-all duration-500 ease-in-out opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-2 z-50 min-w-[700px]">
+      <div className="relative bg-white shadow-xl p-6 ">
         {/* Arrow */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 -top-2 w-4 h-4 bg-white rotate-45 z-0"></div>
+        {/* <div className="absolute left-1/2 transform -translate-x-1/2 -top-2 w-4 h-4 bg-white rotate-45 z-0"></div> */}
         
         <div className="relative z-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
           {Categories.map((category, index) => (

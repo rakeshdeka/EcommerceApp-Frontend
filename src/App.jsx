@@ -23,6 +23,7 @@ import SavedUPI from './pages/MyDash/SavedUPI'
 import SavedWalletsBNPL from './pages/MyDash/SavedWalletsBNPL'
 import Address from './pages/MyDash/Address'
 import CheckOutAddress from "./pages/CheckOut/Address"
+import ProductDetail from "./components/detail/index"
 
 function App() {
 
@@ -78,8 +79,8 @@ export const appRouter = createBrowserRouter([
       },
 
       {
-        path: "/overview/:id",
-        element: <ProductOverview />,
+        path: "/overview",
+        element: <ProductDetail />,
       },
           {
         path: "/my/dashboard",

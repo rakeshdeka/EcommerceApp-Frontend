@@ -154,10 +154,7 @@ function ProductOverview() {
       </div>
       
     </div>
-     <div className="mt-4">
-        <h1 className="font-semibold">Related products</h1>
-        <ProductCard cardPadding="sm:pl-0"/>
-      </div>
+   
     </div>
   );
 }
