@@ -24,6 +24,12 @@ import Address from './pages/MyDash/Address'
 import CheckOutAddress from "./pages/CheckOut/Address"
 import ProductDetail from "./components/detail/index"
 import { Navigate } from 'react-router-dom'
+import Login from './components/Authentication/Login/Login'
+import WomanPage from './pages/Body/WomanPage'
+import KidsPage from './pages/Body/KidsPage'
+import HomeLivingPage from './pages/Body/HomeLivingPage'
+import PersonalCarePage from './pages/Body/PersonalCarePage'
+import MenPage from './pages/Body/MenPage'
 
 function App() {
   return (
@@ -63,6 +69,12 @@ export const appRouter = createBrowserRouter([
 
       },
       {
+        path: "/login",
+        element: <Login />,
+
+      },
+
+      {
         path: "/checkout",
         element: <CheckOut />,
         children: [
@@ -94,6 +106,20 @@ export const appRouter = createBrowserRouter([
           { path: "addresses", element: <Address /> },
         ],
       },
+      {
+        path: "/shop",
+        element: <MenPage />,
+        children: [
+          {
+            path: "", element: <Navigate to="men" replace />
+          },
+          { path: "men", element: <MenPage /> },
+          { path: "women", element: <WomanPage /> },
+          { path: "kids", element: <KidsPage /> },
+          { path: "home-living", element: <HomeLivingPage /> },
+          { path: "personal-care", element: <PersonalCarePage /> }
+        ]
+      },
 
     ],
   },
@@ -113,3 +139,15 @@ export const appRouter = createBrowserRouter([
 ]);
 
 export default App
+
+
+
+//  category
+// https://www.myntra.com/men-topwear
+//  sub_category
+
+// https://www.myntra.com/men-tshirts?f=Categories%3ATshirts
+// https://www.myntra.com/women-ethnic-bottomwear?f=categories%3AChuridar%2CLeggings%2CSalwar
+
+// on search
+// https://www.myntra.com/shirt?rawQuery=shirt

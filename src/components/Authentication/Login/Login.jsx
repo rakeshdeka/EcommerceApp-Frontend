@@ -1,79 +1,52 @@
-import React from 'react'
-import { GiClothes } from "react-icons/gi"
-import { BiRightArrowAlt } from "react-icons/bi"
+
+import Header from "../../Header/Header";
+import loginImage from "../../../assets/login_im.jpg"
 const Login = () => {
+
     return (
-        <>
-            <div>
-                <div className="flex items-center justify-center px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
-                    <div className="xl:mx-auto xl:w-full xl:max-w-sm 2xl:max-w-md">
-                        <div className="mb-2 flex justify-center items-center">
+        <div className=" bg-[#FCEFE9]">
+            <Header />
 
-                            <GiClothes className='h-10 w-10' />
-                        </div>
-                        <h2 className="text-center text-2xl font-bold leading-tight text-black">
-                            Sign in
-                        </h2>
-                        <p className="mt-2 text-center text-base text-gray-600">
-                            Don't have an account?
-                            <a
-                                href="#"
-                                title=""
-                                className="font-medium text-black hover:underline"
-                            >
-                                Sign Up
-                            </a>
-                        </p>
-                        <form className="mt-8">
-                            <div className="space-y-5">
-                                <div>
-                                    <label for="email" className="text-base font-medium text-gray-900">
+            <div className="flex flex-col items-center justify-center min-h-screen">
+                {/* Banner */}
+                <div className=" w-full max-w-md rounded-t-md text-center">
+                    <img src={loginImage} alt="" />
+                </div>
 
-                                        Email address
-                                    </label>
-                                    <div className="mt-2">
-                                        <input
-                                            className="flex h-10 w-full rounded-md border border-gray-300 px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none disabled:cursor-not-allowed"
-                                            type="email"
-                                            placeholder="Email"
-                                            id="email"
-                                        />
-                                    </div>
-                                </div>
-                                <div>
-                                    <div className="flex items-center justify-between">
-                                        <label for="password" className="text-base font-medium text-gray-900">
+                {/* Form */}
+                <div className="bg-white w-full max-w-md p-8 rounded-b-md shadow-lg">
+                    <h3 className="text-lg font-bold mb-4 text-gray-800">Login <span className="font-normal text-gray-600">or</span> Signup</h3>
 
-                                            Password
-                                        </label>
-                                    </div>
-                                    <div className="mt-2">
-                                        <input
-                                            className="flex h-10 w-full rounded-md border border-gray-300  px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none disabled:cursor-not-allowed"
-                                            type="password"
-                                            placeholder="Password"
-                                            id="password"
-                                        />
-                                    </div>
-                                </div>
-                                <div>
-                                    <button
-                                        type="button"
-                                        className="inline-flex w-full items-center justify-center rounded-md bg-black px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-black/80"
-                                    >
-                                        Login
-                                        <BiRightArrowAlt className='ml-2' />
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-
+                    {/* Input */}
+                    <div className="flex items-center border border-gray-300 rounded px-3 py-2 mb-4">
+                        <span className="text-gray-500 border-r text-sm px-1">+91</span>
+                        <input
+                            type="text"
+                            placeholder="Mobile Number*"
+                            className="flex-1 outline-none border-none text-sm pl-3 text-gray-700"
+                        />
                     </div>
+
+                    {/* Terms and Policy */}
+                    <p className="text-xs text-gray-500 text-center mb-6">
+                        By continuing, I agree to the
+                        <span className="text-[#FF3F6C] font-bold cursor-pointer"> Terms of Use </span>
+                        & <span className="text-[#FF3F6C] font-bold cursor-pointer">Privacy Policy</span>
+                    </p>
+
+                    {/* Continue Button */}
+                    <button className="w-full bg-[#FF3F6C] text-white font-semibold py-2 rounded">
+                        CONTINUE
+                    </button>
+
+                    {/* Help Link */}
+                    <p className="text-xs text-gray-500 mt-4">
+                        Have trouble logging in? <span className="text-[#FF3F6C] font-bold cursor-pointer">Get help</span>
+                    </p>
                 </div>
             </div>
+        </div>
+    );
+};
 
-        </>
-    )
-}
-
-export default Login
+export default Login;

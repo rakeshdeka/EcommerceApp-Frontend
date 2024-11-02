@@ -340,7 +340,7 @@ function Body() {
           {newImageArray.map((image, index) => (
             <div key={index} className="overflow-hidden ">
               <Link to="/product-list">
-                <img src={image.src} alt={image.alt} className="w-full h-auto object-cover" />
+                <img src={image.src} alt={image.alt} className="w-full border-3 border-red-600 h-auto object-cover" />
               </Link>
             </div>
           ))}
