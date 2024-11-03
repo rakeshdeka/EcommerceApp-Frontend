@@ -2,24 +2,28 @@ import { Link } from "react-router-dom";
 
 const Cart = () => {
   return (
-    
-      <div className="bg-white min-h-screen p-8">
-    
-     
+
+    <div className="bg-white min-h-screen p-8">
+
+
       <div className="flex flex-col md:flex-row justify-between px-20">
         {/* Left Side - Bag Details */}
         <div className="w-full md:w-2/3 text-sm bg-white p-6 border-r border-slate-100">
-        
+
 
           {/* Delivery Address */}
-          <div className="border p-4 mb-4 rounded-lg ">
-            <h2 className="font-semibold text-gray-800">
-              Deliver to: <span className="font-bold">Rakesh Deka, 781021</span>
-            </h2>
-            <p className="text-gray-600">
-              Near Ganesh Mandir, Ganesh Nagar, Guwahati College Road, Bamunimaidan, Guwahati, Assam
-            </p>
-            <button className="mt-2 text-pink-500 border border-pink-500 px-4 py-1 rounded-md">CHANGE ADDRESS</button>
+          <div className="border p-4 mb-4 rounded-lg bg-[#FFF6F4] text-xs flex gap-3 ">
+            <div>
+              <h2 className="font-semibold text-gray-800">
+                Deliver to: <span className="font-bold">Rakesh Deka, 781021</span>
+              </h2>
+              <p className="text-gray-600">
+                Near Ganesh Mandir, Ganesh Nagar, Guwahati College Road, Bamunimaidan, Guwahati, Assam
+              </p>
+            </div>
+
+
+            <button className="mt-2 text-pink-500 border border-pink-500 p-2 rounded-md font-bold text-xs">CHANGE ADDRESS</button>
           </div>
 
           {/* Available Offers */}
@@ -66,7 +70,7 @@ const Cart = () => {
           <div className="border p-4 mb-4 rounded-lg">
             <div className="flex justify-between items-center">
               <h3 className="font-semibold">Apply Coupons</h3>
-              <button className="text-pink-500 border border-pink-500 px-4 py-1 rounded-md">APPLY</button>
+              <button className="text-pink-500 border border-pink-500 text-xs p-2 py-1 font-bold hover:bg-[#FFF6F4] transition-colors">APPLY</button>
             </div>
           </div>
 
@@ -117,16 +121,16 @@ const Cart = () => {
               <p>₹599</p>
             </div>
             <Link to='/checkout/address'>
-            <button className="w-full mt-4 bg-pink-500 text-white py-2 font-bold">
-              PLACE ORDER
-            </button>
+              <button className="w-full mt-4 bg-pink-500 text-white py-2 font-bold">
+                PLACE ORDER
+              </button>
             </Link>
           </div>
         </div>
       </div>
     </div>
-   
-    
+
+
   );
 };
 

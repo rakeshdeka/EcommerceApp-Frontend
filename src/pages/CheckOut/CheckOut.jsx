@@ -19,24 +19,23 @@ const Checkout = () => {
             className="h-10"
           />
         </Link>
-        
+
         {/* Steps Navigation */}
-      <div className="flex space-x-2">
-  {steps.map((step, index) => (
-    <div key={step} className="flex items-center">
-      <span
-        className={`text-sm ${
-          index === activeStepIndex ? 'text-green-500 border-b-2 border-green-500' : 'text-gray-500'
-        }`}
-      >
-        {step.toUpperCase()}
-      </span>
-      {index < steps.length - 1 && (
-        <span className="mx-2 text-gray-500">--------</span>
-      )}
-    </div>
-  ))}
-</div>
+        <div className="flex space-x-2">
+          {steps.map((step, index) => (
+            <div key={step} className="flex items-center">
+              <span
+                className={`text-xs font-semibold ${index === activeStepIndex ? 'text-green-500 border-b-2 border-green-500' : 'text-gray-500'
+                  }`}
+              >
+                {step.toUpperCase()}
+              </span>
+              {index < steps.length - 1 && (
+                <span className="mx-2 text-gray-500">--------</span>
+              )}
+            </div>
+          ))}
+        </div>
 
 
         <div className="flex items-center">
