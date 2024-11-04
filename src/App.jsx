@@ -4,8 +4,6 @@ import Cart from './pages/CheckOut/Cart'
 import { Error } from './pages/Error/Error'
 import ProductList from './components/ProductList/ProductList'
 import { createHashRouter, Outlet } from 'react-router-dom'
-import { CartProvider } from './utils/Contexts/CartContext';
-import { WishListProvider } from './utils/Contexts/WishListContext'
 import AdminDashboard from './components/DashBoard/AdminDashboard/AdminDashboard';
 import CheckOut from './pages/CheckOut/CheckOut';
 import WishList from './pages/WishList/WishList';
@@ -34,11 +32,9 @@ import MenPage from './pages/Body/MenPage'
 function App() {
   return (
     <div className=''>
-      <CartProvider>
-        <WishListProvider>
-          <Outlet />
-        </WishListProvider>
-      </CartProvider>
+
+      <Outlet />
+
     </div>
   )
 }
