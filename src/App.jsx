@@ -3,7 +3,7 @@ import AboutUs from './pages/AboutUs/AboutUs'
 import Cart from './pages/CheckOut/Cart'
 import { Error } from './pages/Error/Error'
 import ProductList from './components/ProductList/ProductList'
-import { createBrowserRouter, Outlet } from 'react-router-dom'
+import { createHashRouter, Outlet } from 'react-router-dom'
 import { CartProvider } from './utils/Contexts/CartContext';
 import { WishListProvider } from './utils/Contexts/WishListContext'
 import AdminDashboard from './components/DashBoard/AdminDashboard/AdminDashboard';
@@ -42,7 +42,7 @@ function App() {
     </div>
   )
 }
-export const appRouter = createBrowserRouter([
+export const appRouter = createHashRouter([
   {
     path: "/",
     element: <App />,
